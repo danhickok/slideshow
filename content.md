@@ -31,7 +31,8 @@ or a triple-hyphen (---) for an m-dash.
 
 Following standard markdown styling, **bold text** is surrounded by
 double-asterisks (\*\*) and _italicized text_ is surrounded by either
-underscores (_) or a single asterisk (*).
+underscores (_) or a single asterisk (*).  Other markdown styles should work,
+too.
 
 Slides themselves are separated by three hyphens all by themselves with an empty
 line above and below them.
@@ -55,14 +56,15 @@ shows the notes.
 ---
 
 #### _Selected Passage_
-<div class="passage">
-[1] This would be the text of the passage. [2] The verse numbers in your markup
+<passage>
+[1] "This would be the text of the passage. [2] The verse numbers in your markup
 are in square brackets, but they're translated to a different font and style and
-the square brackets are removed for the slide.
+the square brackets are removed for the slide."
 
 [3] Passages appear in a scrollable box. You can page up and down using the "1"
-and "2" keys.
-</div>
+and "2" keys. [4] So the whole idea is that this will give you a useful area for
+reading the passage, [5] without having to navigate to another slide.
+</passage>
 
 ---
 

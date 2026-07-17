@@ -31,19 +31,12 @@
     <script src="dist/plugin/zoom.js"></script>
     <script>
 
-        //TODO: can we use a component here for passage and other features?
-
         const Simplifier = {
             id: 'simplifier',
             init: (deck) => {
                 const slides = deck.getSlides();
                 for (let slide of slides) {
-                    let passage = slide.querySelector('.passage');
-                    if (passage) {
-                        let content = passage.innerHTML;
-                        passage.innerHTML =
-                            content.replace(/\[([0-9]+)\]/g, '<span class="verse">$1</span>');
-                    }
+                    //TODO: replace my simplified notation with actual HTML
                 }
                 deck.layout();
             },
@@ -54,11 +47,11 @@
             init: (deck) => {
                 const slides = deck.getSlides();
                 for (let slide of slides) {
-                    let passage = slide.querySelector('.passage');
+                    let passage = slide.querySelector('passage');
                     if (passage) {
                         let content = passage.innerHTML;
                         passage.innerHTML =
-                            content.replace(/\[([0-9]+)\]/g, '<span class="verse">$1</span>');
+                            content.replace(/\[([0-9]+)\]/g, '<verse>$1</verse>');
                     }
                 }
                 deck.layout();
@@ -81,18 +74,16 @@
             },
         });
 
-        // When we get to a slide containing a passage, set the focus on the passage
         Reveal.on('slidechanged', event => {
-            const passage = event.currentSlide.querySelector('.passage');
+            const passage = event.currentSlide.querySelector('passage');
             if (passage) {
-                passage.focus();
                 passage.scrollTop = 0;
             }
         });
 
         // Allow the keys "1" and "2" to scroll the passage up or down
         document.addEventListener('keydown', event => {
-            const passage = document.querySelector('.passage:focus');
+            const passage = document.querySelector('passage');
             if (!passage)
                 return;
 
