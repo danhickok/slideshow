@@ -56,15 +56,22 @@ shows the notes.
 ---
 
 #### _Selected Passage_
+
 <passage>
-[1] "This would be the text of the passage. [2] The verse numbers in your markup
-are in square brackets, but they're translated to a different font and style and
-the square brackets are removed for the slide."
+
+[1] This would be the text of the passage. The passage is designed to be tall
+enough to be the only thing on the page besides the passage name.
+
+[2] The verse numbers in your markdown are in square brackets, but they're
+translated to a different font and style and the square brackets are removed
+when they appear in the slide.
 
 [3] Passages appear in a scrollable box. You can page up and down using the 1
-and 2 keys on your keyboard211. [4] So the whole idea is that this will give you a
+and 2 keys on your keyboard. [4] So the whole idea is that this will give you a
 useful area for reading the passage, [5] without having to navigate to another
-slide. </passage>
+slide.
+
+</passage>
 
 ---
 
@@ -108,4 +115,6 @@ _Etc._
 
 ---
 
-<!-- .slide: style="background-color: black !important;" -->
+<!-- .slide: style="background-color: black;" -->
+
+Fini

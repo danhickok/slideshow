@@ -1,7 +1,7 @@
 # slideshow
 
 This is my own take on slides using [Reveal.js](https://revealjs.com/).  Working
-from the compiled product of version 5.0, I've added features that I use during
+from the compiled product of version 6.0, I've added features that I use during
 my ABF lessons.
 
 Featured are specific sizes and dimensions for displaying on an FHD television,

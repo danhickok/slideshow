@@ -1,113 +1,100 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Dan's Test of Reveal Basic</title>
+    <title>Slideshow</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/white.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="reveal">
-        <div class="slides">
-            <section
-                data-markdown="content.md"
-                data-separator="^\r?\n---\r?\n$"
-                data-separator-vertical="^\r?\n\(---\)\r?\n$"
-                data-separator-notes="^\r?\n===\r?\n$"
-                data-charset="utf-8">
-            </section>
-        </div>
+      <div class="slides">
+        <section
+          data-markdown="content.md"
+          data-separator="^\r?\n---\r?\n$"
+          data-separator-vertical="^\r?\n\(---\)\r?\n$"
+          data-separator-notes="^\r?\n===\r?\n$"
+          data-charset="utf-8"></section>
+      </div>
     </div>
 
     <script src="dist/reveal.js"></script>
     <script src="dist/plugin/notes.js"></script>
     <script src="dist/plugin/markdown.js"></script>
     <script src="dist/plugin/zoom.js"></script>
+    <script src="scripts/perform-scroll.js"></script>
     <script>
+      document.addEventListener("keydown", (event) => {
+        if (event.key == "1" || event.key == "2") {
+          const direction = event.key == "1" ? "up" : "down";
+          performScroll(direction);
 
-        const Simplifier = {
-            id: 'simplifier',
-            init: (deck) => {
-                const slides = deck.getSlides();
-                for (let slide of slides) {
-                    //TODO: replace my simplified notation with actual HTML
-                }
-                deck.layout();
-            },
-        };
+          const channel = new BroadcastChannel("scroller");
+          channel.postMessage(direction);
+        }
+      });
 
-        const VerseFormatter = {
-            id: 'verse-formatter',
-            init: (deck) => {
-                const slides = deck.getSlides();
-                for (let slide of slides) {
-                    let passage = slide.querySelector('passage');
-                    if (passage) {
-                        let content = passage.innerHTML;
-                        passage.innerHTML =
-                            content.replace(/\[([0-9]+)\]/g, '<verse>$1</verse>');
-                    }
-                }
-                deck.layout();
-            },
-        };
+      // this attempt to scroll in both main and speaker view simultaneously doesn't work - haven't figured out why yet
+      const channel = new BroadcastChannel("scroller");
+      channel.onmessage = (direction) => {
+        performScroll(direction);
+      };
 
-        Reveal.initialize({
-            width: 1920,
-            height: 1080,
-            margin: 0.07,
-            minScale: 0.2,
-            maxScale: 4.0,
-            hash: true,
-            plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
-            transition: "fade",
-            transitionSpeed: "fast",
-            slideNumber: true,
-            markdown: {
-                smartypants: true
-            },
-        });
+      const Simplifier = {
+        id: "simplifier",
+        init: (deck) => {
+          const slides = deck.getSlides();
+          for (let slide of slides) {
+            //TODO: replace my simplified notation with actual HTML
+            // - I haven't thought of any yet
+          }
+          deck.layout();
+        },
+      };
 
-        Reveal.on('slidechanged', (event) => {
-            const passage = event.currentSlide.querySelector('passage');
+      const VerseFormatter = {
+        id: "verse-formatter",
+        init: (deck) => {
+          const slides = deck.getSlides();
+          for (let slide of slides) {
+            let passage = slide.querySelector("passage");
             if (passage) {
-                passage.scrollTop = 0;
+              let content = passage.innerHTML;
+              passage.innerHTML = content.replace(/\[([0-9]+)\]/g, "<verse>$1</verse>");
             }
-        });
+          }
+          deck.layout();
+        },
+      };
 
-        // Allow the keys "1" and "2" to scroll the passage up or down
-        window.addEventListener('keydown', event => {
-            const passage = document.querySelector('passage');
-            if (!passage)
-                return;
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        margin: 0.07,
+        minScale: 0.2,
+        maxScale: 4.0,
+        hash: true,
+        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
+        transition: "fade",
+        transitionSpeed: "fast",
+        slideNumber: true,
+        markdown: {
+          smartypants: true,
+        },
+      });
 
-            const isAtBottom =
-                (passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1);
-            const isAtTop =
-                passage.scrollTop <= 0;
-
-            // Scroll amount leaves about one line of text from the previous page
-            const scrollAmount = passage.clientHeight - 180;
-
-            if (event.key === '2') {
-                if (!isAtBottom) {
-                    passage.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-                }
-            }
-
-            if (event.key === '1') {
-                if (!isAtTop) {
-                    passage.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
-                }
-            }
-        });
-
+      Reveal.on("slidechanged", (event) => {
+        const passage = event.currentSlide.querySelector("passage");
+        if (passage) {
+          passage.scrollTop = 0;
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
