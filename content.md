@@ -61,10 +61,10 @@ shows the notes.
 are in square brackets, but they're translated to a different font and style and
 the square brackets are removed for the slide."
 
-[3] Passages appear in a scrollable box. You can page up and down using the "1"
-and "2" keys. [4] So the whole idea is that this will give you a useful area for
-reading the passage, [5] without having to navigate to another slide.
-</passage>
+[3] Passages appear in a scrollable box. You can page up and down using the 1
+and 2 keys on your keyboard211. [4] So the whole idea is that this will give you a
+useful area for reading the passage, [5] without having to navigate to another
+slide. </passage>
 
 ---
 

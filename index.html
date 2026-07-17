@@ -74,7 +74,7 @@
             },
         });
 
-        Reveal.on('slidechanged', event => {
+        Reveal.on('slidechanged', (event) => {
             const passage = event.currentSlide.querySelector('passage');
             if (passage) {
                 passage.scrollTop = 0;
@@ -82,14 +82,17 @@
         });
 
         // Allow the keys "1" and "2" to scroll the passage up or down
-        document.addEventListener('keydown', event => {
+        window.addEventListener('keydown', event => {
             const passage = document.querySelector('passage');
             if (!passage)
                 return;
 
-            const isAtBottom = passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1;
-            const isAtTop = passage.scrollTop <= 0;
+            const isAtBottom =
+                (passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1);
+            const isAtTop =
+                passage.scrollTop <= 0;
 
+            // Scroll amount leaves about one line of text from the previous page
             const scrollAmount = passage.clientHeight - 180;
 
             if (event.key === '2') {
