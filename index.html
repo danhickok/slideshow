@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Dan's Test of Reveal Basic</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section
+                data-markdown="content.md"
+                data-separator="^\r?\n---\r?\n$"
+                data-separator-vertical="^\r?\n\(---\)\r?\n$"
+                data-separator-notes="^\r?\n===\r?\n$"
+                data-charset="utf-8">
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="dist/plugin/notes.js"></script>
+    <script src="dist/plugin/markdown.js"></script>
+    <script src="dist/plugin/zoom.js"></script>
+    <script>
+
+        //TODO: can we use a component here for passage and other features?
+
+        const Simplifier = {
+            id: 'simplifier',
+            init: (deck) => {
+                const slides = deck.getSlides();
+                for (let slide of slides) {
+                    let passage = slide.querySelector('.passage');
+                    if (passage) {
+                        let content = passage.innerHTML;
+                        passage.innerHTML =
+                            content.replace(/\[([0-9]+)\]/g, '<span class="verse">$1</span>');
+                    }
+                }
+                deck.layout();
+            },
+        };
+
+        const VerseFormatter = {
+            id: 'verse-formatter',
+            init: (deck) => {
+                const slides = deck.getSlides();
+                for (let slide of slides) {
+                    let passage = slide.querySelector('.passage');
+                    if (passage) {
+                        let content = passage.innerHTML;
+                        passage.innerHTML =
+                            content.replace(/\[([0-9]+)\]/g, '<span class="verse">$1</span>');
+                    }
+                }
+                deck.layout();
+            },
+        };
+
+        Reveal.initialize({
+            width: 1920,
+            height: 1080,
+            margin: 0.07,
+            minScale: 0.2,
+            maxScale: 4.0,
+            hash: true,
+            plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
+            transition: "fade",
+            transitionSpeed: "fast",
+            slideNumber: true,
+            markdown: {
+                smartypants: true
+            },
+        });
+
+        // When we get to a slide containing a passage, set the focus on the passage
+        Reveal.on('slidechanged', event => {
+            const passage = event.currentSlide.querySelector('.passage');
+            if (passage) {
+                passage.focus();
+                passage.scrollTop = 0;
+            }
+        });
+
+        // Allow the keys "1" and "2" to scroll the passage up or down
+        document.addEventListener('keydown', event => {
+            const passage = document.querySelector('.passage:focus');
+            if (!passage)
+                return;
+
+            const isAtBottom = passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1;
+            const isAtTop = passage.scrollTop <= 0;
+
+            const scrollAmount = passage.clientHeight - 180;
+
+            if (event.key === '2') {
+                if (!isAtBottom) {
+                    passage.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                }
+            }
+
+            if (event.key === '1') {
+                if (!isAtTop) {
+                    passage.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
