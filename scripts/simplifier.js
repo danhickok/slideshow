@@ -4,9 +4,10 @@ const Simplifier = {
   id: "simplifier",
   init: (deck) => {
     const slides = deck.getSlides();
-    for (let slide of slides) {
-      //TODO: replace my simplified notation with actual HTML
-      // - I haven't thought of any yet
+    for (let i = 0; i < slides.length; ++i) {
+      if (slides[i].querySelector('lesson-section')) {
+        slides[i].setAttribute('data-transition', 'slide');
+      }
     }
     deck.layout();
   },

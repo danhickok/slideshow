@@ -1,4 +1,4 @@
-<!-- .slide: style="text-align: center" -->
+<lesson-welcome>
 
 # Welcome Message<br>Goes Here
 
@@ -8,7 +8,7 @@
 
 ---
 
-<!-- .slide: style="text-align: center;" -->
+<lesson-title>
 
 # Lesson Title Goes Here
 
@@ -16,7 +16,7 @@
 
 ---
 
-<!-- .slide: style="text-align: center" data-transition="slide" -->
+<lesson-section>
 
 # Introduction
 
@@ -47,7 +47,34 @@ shows the notes.
 
 ---
 
-<!-- .slide: style="text-align: center" data-transition="slide" -->
+There are special tags you can use for different kinds of slides:
+
+| Tag | Effects |
+| --- | ----- |
+| `<lesson-welcome>` | Centers contents; (default) fade transition |
+| `<lesson-title>` | Centers contents; (default) fade transition |
+| `<lesson-section>` | Centers contents; left-to-right transition |
+
+---
+
+<left-block>
+
+You can divide the slide into two side-by-side sections using the `<left-block>`
+and `<right-block>` tags.  The text in each block wraps around.
+
+</left-block>
+
+<right-block class="fragment">
+
+The two blocks are designed to take up the entire slide by themselves.
+
+So don't add any heading or footing to the slide.
+
+</right-block>
+
+---
+
+<lesson-section>
 
 # Lesson Section Title
 
@@ -75,7 +102,9 @@ slide.
 
 ---
 
-It will take some practice to get the size of the slides right.
+It will take some practice to get the size of the slides right.  The text
+appears centered vertically but left-justified (unless using one of the
+special slide tags).
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

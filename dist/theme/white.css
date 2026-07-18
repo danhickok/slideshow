@@ -330,7 +330,77 @@ section.has-dark-background h6 {
   color: #fff;
 }
 
+/* for simplified text of slide types */
+
+lesson-welcome {
+  display: block;
+  text-align: center;
+}
+
+lesson-title {
+  display: block;
+  text-align: center;
+}
+
+lesson-section {
+  display: block;
+  text-align: center;
+}
+
+left-block {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  height: 950px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+right-block {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 950px;
+  text-align: left;
+}
+
+floating-box {
+  display: inline-block;
+  text-align: left;
+  border: 4px solid black;
+  margin: 8px;
+  padding: 8px;
+}
+
+/* because I'm opinionated about how tables should look */
+
+table {
+  font-size: 0.75em;
+  border-collapse: collapse;
+}
+
+table thead, table th, table tbody, table td {
+  border: 4px solid black;
+}
+
+table th {
+  color: white;
+  background-color: rgb(42, 42, 42);
+}
+
 /* For passages and verses */
+
+.passage {
+    font-family: 'Roboto Slab';
+    line-height: 1.2em;
+    color: #222;
+    background-color: #e5f2fa;
+}
 
 passage {
     display: block;
@@ -347,6 +417,7 @@ passage {
     scrollbar-color: #00aaff #e5f2fa;
     padding: 0.3em;
 }
+
 verse {
     display: inline;
     color: #00aaff;
