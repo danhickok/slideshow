@@ -59,7 +59,7 @@ There are special tags you can use for different kinds of slides:
 
 <left-block>
 
-You can divide the slide into two side-by-side sections using the `<left-block>`
+You can divide the slide into two side-by-side pieces using the `<left-block>`
 and `<right-block>` tags.  The text in each block wraps around.
 
 </left-block>
@@ -71,6 +71,17 @@ The two blocks are designed to take up the entire slide by themselves.
 So don't add any heading or footing to the slide.
 
 </right-block>
+
+<floating-box class="fragment">
+
+Here's some text floating in a box.
+
+You'll notice that the text wraps around and allows it to expand for longer
+sentences.
+
+The more text you add, the taller the box becomes.
+
+</floating-box>
 
 ---
 
