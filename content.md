@@ -112,9 +112,3 @@ repellat.
 ---
 
 _Etc._
-
----
-
-<!-- .slide: style="background-color: black;" -->
-
-Fini
