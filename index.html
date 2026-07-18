@@ -23,7 +23,7 @@
           data-charset="utf-8">
         </section>
         <section data-background-color="black">
-          <!-- The last slide is black -->
+          <!-- The last slide is plain black -->
         </section>
       </div>
     </div>
@@ -32,50 +32,18 @@
     <script src="dist/plugin/notes.js"></script>
     <script src="dist/plugin/markdown.js"></script>
     <script src="dist/plugin/zoom.js"></script>
+    <script src="scripts/simplifier.js"></script>
+    <script src="scripts/verse-formatter.js"></script>
     <script src="scripts/perform-scroll.js"></script>
+    <script src="scripts/scroll-broadcaster.js"></script>
     <script>
       document.addEventListener("keydown", (event) => {
         if (event.key == "1" || event.key == "2") {
           const direction = event.key == "1" ? "up" : "down";
           performScroll(direction);
-
-          const channel = new BroadcastChannel("scroller");
-          channel.postMessage(direction);
+          broadcastScroll(direction);
         }
       });
-
-      // this attempt to scroll in both main and speaker view simultaneously doesn't work - haven't figured out why yet
-      const channel = new BroadcastChannel("scroller");
-      channel.onmessage = (direction) => {
-        performScroll(direction);
-      };
-
-      const Simplifier = {
-        id: "simplifier",
-        init: (deck) => {
-          const slides = deck.getSlides();
-          for (let slide of slides) {
-            //TODO: replace my simplified notation with actual HTML
-            // - I haven't thought of any yet
-          }
-          deck.layout();
-        },
-      };
-
-      const VerseFormatter = {
-        id: "verse-formatter",
-        init: (deck) => {
-          const slides = deck.getSlides();
-          for (let slide of slides) {
-            let passage = slide.querySelector("passage");
-            if (passage) {
-              let content = passage.innerHTML;
-              passage.innerHTML = content.replace(/\[([0-9]+)\]/g, "<verse>$1</verse>");
-            }
-          }
-          deck.layout();
-        },
-      };
 
       Reveal.initialize({
         width: 1920,
@@ -84,7 +52,13 @@
         minScale: 0.2,
         maxScale: 4.0,
         hash: true,
-        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
+        plugins: [
+          RevealMarkdown,
+          Simplifier,
+          VerseFormatter,
+          RevealNotes,
+          RevealZoom,
+        ],
         transition: "fade",
         transitionSpeed: "fast",
         slideNumber: true,
@@ -97,6 +71,7 @@
         const passage = event.currentSlide.querySelector("passage");
         if (passage) {
           passage.scrollTop = 0;
+          establishChannel();
         }
       });
     </script>
