@@ -5,8 +5,8 @@ const Simplifier = {
   init: (deck) => {
     const slides = deck.getSlides();
     for (let i = 0; i < slides.length; ++i) {
-      if (slides[i].querySelector('lesson-section')) {
-        slides[i].setAttribute('data-transition', 'slide');
+      if (slides[i].querySelector("lesson-section")) {
+        slides[i].setAttribute("data-transition", "slide");
       }
     }
     deck.layout();

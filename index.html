@@ -20,8 +20,7 @@
           data-separator="^\r?\n---\r?\n$"
           data-separator-vertical="^\r?\n\(---\)\r?\n$"
           data-separator-notes="^\r?\n===\r?\n$"
-          data-charset="utf-8">
-        </section>
+          data-charset="utf-8"></section>
         <section data-background-color="black">
           <!-- The last slide is plain black -->
         </section>
@@ -39,13 +38,12 @@
     <script src="scripts/move-pointer.js"></script>
     <script src="scripts/pointer-broadcaster.js"></script>
     <script>
-
       // key listener
       document.addEventListener("keydown", (ev) => {
         // keys 1 and 2 perform scrolling
         if (ev.key == "1" || ev.key == "2") {
           const direction = ev.key == "1" ? "up" : "down";
-          
+
           performScroll(direction);
           broadcastScroll(direction);
 
@@ -53,9 +51,9 @@
         }
 
         // key ctrl-M toggles pointer visibility
-        if (ev.key.toLowerCase() == 'm' && ev.ctrlKey) {
+        if (ev.key.toLowerCase() == "m" && ev.ctrlKey) {
           ev.preventDefault();
-          
+
           togglePointer();
           showPointer();
           movePointer();
@@ -66,7 +64,7 @@
       });
 
       // mouse listener
-      window.addEventListener('mousemove', (ev) => {
+      window.addEventListener("mousemove", (ev) => {
         updatePointer(ev.clientX, ev.clientY);
         showPointer();
         movePointer();
@@ -81,13 +79,7 @@
         minScale: 0.2,
         maxScale: 4.0,
         hash: true,
-        plugins: [
-          RevealMarkdown,
-          Simplifier,
-          VerseFormatter,
-          RevealNotes,
-          RevealZoom,
-        ],
+        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
         transition: "fade",
         transitionSpeed: "fast",
         slideNumber: true,
@@ -99,14 +91,13 @@
       // called when each slide appears
       Reveal.on("slidechanged", (event) => {
         establishPointerChannel();
-        
+
         const passage = event.currentSlide.querySelector("passage");
         if (passage) {
           passage.scrollTop = 0;
           establishScrollChannel();
         }
       });
-
     </script>
   </body>
 </html>
