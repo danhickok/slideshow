@@ -28,8 +28,6 @@
       </div>
     </div>
 
-    <img id="pointer" src=".images/finger.png" width="200" height="187" hidden />
-
     <script src="dist/reveal.js"></script>
     <script src="dist/plugin/notes.js"></script>
     <script src="dist/plugin/markdown.js"></script>
@@ -41,20 +39,12 @@
     <script src="scripts/move-pointer.js"></script>
     <script src="scripts/pointer-broadcaster.js"></script>
     <script>
-      // keep pointer from leaving right or bottom edge of window
-      const POINTER_EDGE = 10;
-      
-      // pointer and pointer state
-      const pointer = document.getElementById('pointer');
-      let pointerVisible = false;
-      let currentX = 0;
-      let currentY = 0;
 
       // key listener
-      document.addEventListener("keydown", (event) => {
+      document.addEventListener("keydown", (ev) => {
         // keys 1 and 2 perform scrolling
-        if (event.key == "1" || event.key == "2") {
-          const direction = event.key == "1" ? "up" : "down";
+        if (ev.key == "1" || ev.key == "2") {
+          const direction = ev.key == "1" ? "up" : "down";
           
           performScroll(direction);
           broadcastScroll(direction);
@@ -66,11 +56,9 @@
         if (ev.key.toLowerCase() == 'm' && ev.ctrlKey) {
           ev.preventDefault();
           
-          pointerVisible = !pointerVisible;
-          
+          togglePointer();
           showPointer();
           movePointer();
-          
           broadcastPointer();
 
           return false;
@@ -79,15 +67,13 @@
 
       // mouse listener
       window.addEventListener('mousemove', (ev) => {
-        currentX = Math.min(window.innerWidth - POINTER_EDGE, Math.max(0, ev.clientX));
-        currentY = Math.min(window.innerHeight - POINTER_EDGE, Math.max(0, ev.clientY));
-
+        updatePointer(ev.clientX, ev.clientY);
         showPointer();
         movePointer();
-
         broadcastPointer();
       });
 
+      // Reveal initialization
       Reveal.initialize({
         width: 1920,
         height: 1080,
@@ -110,6 +96,7 @@
         },
       });
 
+      // called when each slide appears
       Reveal.on("slidechanged", (event) => {
         establishPointerChannel();
         
@@ -119,6 +106,7 @@
           establishScrollChannel();
         }
       });
+
     </script>
   </body>
 </html>

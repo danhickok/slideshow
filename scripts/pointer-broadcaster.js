@@ -2,11 +2,13 @@
 // pointer around on the slide in both main and speaker views
 
 function establishPointerChannel() {
+  establishLessonPointer();
+
   if (!window.pointerChannel) {
     window.pointerChannel = new BroadcastChannel('pointer');
 
     window.pointerChannel.onmessage = (ev) => {
-      pointerVisible = ev.data.visible;
+      window.lessonPointer.pointerVisible = ev.data.visible;
 
       const sourceWidth = ev.data.sourceWidth;
       const sourceHeight = ev.data.sourceHeight;
@@ -14,9 +16,7 @@ function establishPointerChannel() {
       const scaledX = Math.floor(ev.data.x * window.innerWidth / sourceWidth);
       const scaledY = Math.floor(ev.data.y * window.innerHeight / sourceHeight);
 
-      currentX = Math.min(window.innerWidth - POINTER_EDGE, Math.max(0, scaledX));
-      currentY = Math.min(window.innerHeight - POINTER_EDGE, Math.max(0, scaledY));
-
+      updatePointer(scaledX, scaledY);
       showPointer();
       movePointer();
     }
@@ -24,10 +24,13 @@ function establishPointerChannel() {
 }
 
 function broadcastPointer() {
+  establishLessonPointer();
+  establishPointerChannel();
+
   window.pointerChannel.postMessage({
-    visible: pointerVisible,
-    x: currentX,
-    y: currentY,
+    visible: window.lessonPointer.pointerVisible,
+    x: window.lessonPointer.currentX,
+    y: window.lessonPointer.currentY,
     sourceWidth: window.innerWidth,
     sourceHeight: window.innerHeight,
   });
