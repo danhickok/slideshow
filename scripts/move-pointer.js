@@ -39,6 +39,7 @@ function togglePointer() {
   establishLessonPointer();
 
   window.lessonPointer.pointerVisible = !window.lessonPointer.pointerVisible;
+  console.log(`Pointer is now ${window.lessonPointer.pointerVisible ? '' : 'in'}visible`);
 }
 
 function showPointer() {
@@ -59,5 +60,6 @@ function movePointer() {
   if (window.lessonPointer.pointerVisible) {
     window.lessonPointer.pointer.style.top = `${window.lessonPointer.currentY}px`;
     window.lessonPointer.pointer.style.left = `${window.lessonPointer.currentX}px`;
+    console.log(`Pointer moved to X:${window.lessonPointer.currentX} Y:${window.lessonPointer.currentY}`)
   }
 }
