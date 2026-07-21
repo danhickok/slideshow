@@ -34,44 +34,11 @@
     <script src="scripts/simplifier.js"></script>
     <script src="scripts/verse-formatter.js"></script>
     <script src="scripts/perform-scroll.js"></script>
-    <script src="scripts/scroll-broadcaster.js"></script>
-    <script src="scripts/move-pointer.js"></script>
-    <script src="scripts/pointer-broadcaster.js"></script>
     <script>
-      // key listener
-      document.addEventListener("keydown", (ev) => {
-        // keys 1 and 2 perform scrolling
-        if (ev.key == "1" || ev.key == "2") {
-          const direction = ev.key == "1" ? "up" : "down";
 
-          performScroll(direction);
-          broadcastScroll(direction);
+      const DOWN_ARROW = 40;
+      const UP_ARROW = 38;
 
-          return false;
-        }
-
-        // key ctrl-M toggles pointer visibility
-        if (ev.key.toLowerCase() == "m" && ev.ctrlKey) {
-          ev.preventDefault();
-
-          togglePointer();
-          showPointer();
-          movePointer();
-          broadcastPointer();
-
-          return false;
-        }
-      });
-
-      // mouse listener
-      document.addEventListener("mousemove", (ev) => {
-        updatePointer(ev.clientX, ev.clientY);
-        showPointer();
-        movePointer();
-        broadcastPointer();
-      });
-
-      // Reveal initialization
       Reveal.initialize({
         width: 1920,
         height: 1080,
@@ -86,18 +53,12 @@
         markdown: {
           smartypants: true,
         },
+        keyboard: {
+          DOWN_ARROW: () => { performScroll('down'); },  // Liar!  This doesn't work!
+          UP_ARROW: () => { performScroll('up'); },
+        },
       });
 
-      // called when each slide appears
-      Reveal.on("slidechanged", (event) => {
-        establishPointerChannel();
-
-        const passage = event.currentSlide.querySelector("passage");
-        if (passage) {
-          passage.scrollTop = 0;
-          establishScrollChannel();
-        }
-      });
     </script>
   </body>
 </html>
@@ -106,6 +67,8 @@
 
 Look into https://github.com/denniskniep/reveal.js-plugin-spotlight for keys on how to
 make this work as a plugin
+
+----------
 
 Also worth looking into:
 
@@ -161,14 +124,12 @@ Implementation Guide
 [5] https://tutorials.sitecast.com/tutorials/how-to-use-reveal-js-for-a-cloud-based-presentation-deck/
 [6] https://stackoverflow.com/questions/8805550/scroll-div-with-arrow-keys
 
+----------
 
+Well, there's no way around it.  I'm going to have to learn how to make a plugin
+that lets me override the arrow keys for a scrollable section.
 
-
-
-
-
-
-
-
+More detail and examples here:
+https://github.com/rajgoel/reveal.js-plugins
 
 -->
