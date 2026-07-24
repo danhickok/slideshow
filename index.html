@@ -53,19 +53,22 @@
         keyboard: {
           38: () => {
             performScroll("up");
+            broadcastScroll("up");
           },
           40: () => {
             performScroll("down");
+            broadcastScroll("down");
           },
         },
       });
 
       // called when each slide appears
       Reveal.on("slidechanged", (event) => {
+        establishScrollChannel();
+
         const passage = event.currentSlide.querySelector("passage");
         if (passage) {
           passage.scrollTop = 0;
-          establishScrollChannel();
         }
       });
     </script>
