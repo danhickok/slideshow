@@ -34,26 +34,40 @@
     <script src="scripts/simplifier.js"></script>
     <script src="scripts/verse-formatter.js"></script>
     <script src="scripts/perform-scroll.js"></script>
+    <script src="scripts/scroll-broadcaster.js"></script>
     <script>
-          Reveal.initialize({
-            width: 1920,
-            height: 1080,
-            margin: 0.07,
-            minScale: 0.2,
-            maxScale: 4.0,
-            hash: true,
-            plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
-            transition: "fade",
-            transitionSpeed: "fast",
-            slideNumber: true,
-            markdown: {
-              smartypants: true,
-            },
-            keyboard: {
-              38: () => { performScroll('up') },
-              40: () => { performScroll('down') },
-            },
-          });
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        margin: 0.07,
+        minScale: 0.2,
+        maxScale: 4.0,
+        hash: true,
+        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
+        transition: "fade",
+        transitionSpeed: "fast",
+        slideNumber: true,
+        markdown: {
+          smartypants: true,
+        },
+        keyboard: {
+          38: () => {
+            performScroll("up");
+          },
+          40: () => {
+            performScroll("down");
+          },
+        },
+      });
+
+      // called when each slide appears
+      Reveal.on("slidechanged", (event) => {
+        const passage = event.currentSlide.querySelector("passage");
+        if (passage) {
+          passage.scrollTop = 0;
+          establishScrollChannel();
+        }
+      });
     </script>
   </body>
 </html>
