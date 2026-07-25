@@ -12,9 +12,6 @@ function establishPointerChannel() {
 
       window.lessonPointer.pointerVisible = ev.data.visible;
 
-      const sourceWindowWidth = ev.data.sourceWidth;
-      const sourceWindowHeight = ev.data.sourceHeight;
-
       const sourceSlideX = ev.data.slideX;
       const sourceSlideY = ev.data.slideY;
       const sourceSlideWidth = ev.data.slideWidth;
@@ -40,8 +37,6 @@ function broadcastPointer() {
     visible: window.lessonPointer.pointerVisible,
     x: window.lessonPointer.currentX,
     y: window.lessonPointer.currentY,
-    sourceWidth: window.innerWidth,
-    sourceHeight: window.innerHeight,
     slideX: slideRect.x,
     slideY: slideRect.y,
     slideWidth: slideRect.width,
