@@ -12,16 +12,20 @@ function establishLessonPointer() {
       originalCursorState: document.body.style.cursor,
     };
 
-    const pointerElement = document.createElement('img');
-    pointerElement.id = 'lesson-pointer';
-    pointerElement.src = 'images/finger.png';
+    const pointerElement = document.createElement("img");
+    pointerElement.id = "lesson-pointer";
+    pointerElement.src = "images/finger.png";
     pointerElement.width = 200;
     pointerElement.height = 187;
-    pointerElement.hidden = true;
+    pointerElement.style.display = "none";
+    pointerElement.style.position = "absolute";
+    pointerElement.style.zIndex = "999999";
+    pointerElement.style.top = "0px";
+    pointerElement.style.left = "0px";
 
     window.document.body.appendChild(pointerElement);
 
-    window.document.addEventListener('mousemove', (ev) => {
+    window.document.addEventListener("mousemove", (ev) => {
       updatePointer(ev.clientX, ev.clientY);
       showPointer();
       movePointer();
@@ -32,8 +36,6 @@ function establishLessonPointer() {
 
 function updatePointer(x, y) {
   establishLessonPointer();
-
-  const pointerElement = document.getElementById('lesson-pointer');
 
   window.lessonPointer.currentX = Math.min(
     window.innerWidth - POINTER_EDGE,
@@ -49,17 +51,22 @@ function togglePointer() {
   establishLessonPointer();
 
   window.lessonPointer.pointerVisible = !window.lessonPointer.pointerVisible;
-  console.log(`Pointer is now ${window.lessonPointer.pointerVisible ? '' : 'in'}visible`);
+
+  showPointer();
+  movePointer();
+  broadcastPointer();
 }
 
 function showPointer() {
   establishLessonPointer();
 
+  const pointerElement = window.document.getElementById("lesson-pointer");
+
   if (window.lessonPointer.pointerVisible) {
-    window.lessonPointer.pointer.hidden = false;
-    document.body.style.cursor = 'none';
+    pointerElement.style.display = "block";
+    document.body.style.cursor = "none";
   } else {
-    window.lessonPointer.pointer.hidden = true;
+    pointerElement.style.display = "none";
     document.body.style.cursor = window.lessonPointer.originalCursorState;
   }
 }
@@ -67,11 +74,10 @@ function showPointer() {
 function movePointer() {
   establishLessonPointer();
 
+  const pointerElement = window.document.getElementById("lesson-pointer");
+
   if (window.lessonPointer.pointerVisible) {
-    window.lessonPointer.pointer.style.top = `${window.lessonPointer.currentY}px`;
-    window.lessonPointer.pointer.style.left = `${window.lessonPointer.currentX}px`;
-    console.log(
-      `Pointer moved to X:${window.lessonPointer.currentX} Y:${window.lessonPointer.currentY}`,
-    );
+    pointerElement.style.top = `${window.lessonPointer.currentY}px`;
+    pointerElement.style.left = `${window.lessonPointer.currentX}px`;
   }
 }
