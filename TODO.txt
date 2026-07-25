@@ -19,18 +19,29 @@ Current tasks in this branch
 [ ] Move the scroll attributes into their own style class so that they could be
     applied to other elements as desired.
 
-These may help:
-
-Reveal.getComputedSlideSize();
-
-Reveal.initialize().then(() => {
-  // reveal.js is ready
-});
-
-parseInt(Reveal.getCurrentSlide().style['top'], 10) means "116px" becomes 116
-however parseInt(Reveal.getCurrentSlide().style['left'], 10) is NaN because it doesn't have a left
 
 
 
+parseInt(Reveal.getCurrentSlide().style['top'], 10) means "116px" becomes 116.
+However parseInt(Reveal.getCurrentSlide().style['left'], 10) is NaN because it
+doesn't have a left (it's an empty string).
+
+Reveal.getComputedSlideSize()
+
+in audience view:
+{width: 1920, height: 1080, presentationWidth: 1004.4, presentationHeight: 898.38}
+
+in speaker view:
+{width: 1920, height: 1080, presentationWidth: 385.95, presentationHeight: 259.47}
+
+
+window.document.querySelector('section.present') gets the current slide
+
+window.document.querySelector('section.present').getBoundingClientRect() gets
+everything we need to know about the slide, without querying Reveal.  This is a
+DOMRect object with x:37.8, y200.5:, width:1004.4, height: 585.0, top: 200.5,
+left: 37.8
+
+But window.document.querySelector('section.present') comes up null in speaker view.
 
 
