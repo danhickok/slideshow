@@ -57,31 +57,29 @@ There are special tags you can use for different kinds of slides:
 
 ---
 
-<left-block>
+<lesson-left>
 
-You can divide the slide into two side-by-side pieces using the `<left-block>`
-and `<right-block>` tags.  The text in each block wraps around.
+You can divide the slide into two side-by-side pieces using the `<lesson-left>`
+and `<lesson-right>` tags.  The text in each block wraps around.
 
-</left-block>
+</lesson-left>
 
-<right-block class="fragment">
+<lesson-right class="fragment">
 
 The two blocks are designed to take up the entire slide by themselves.
 
 So don't add any heading or footing to the slide.
 
-</right-block>
+</lesson-right>
 
-<floating-box class="fragment">
+<lesson-float class="fragment">
 
-Here's some text floating in a box.
+Here's some text floating in a box.  It's in a `<lesson-float>` tag.
 
 You'll notice that the text wraps around and allows it to expand for longer
-sentences.
+sentences.  The more text you add, the taller the box becomes.
 
-The more text you add, the taller the box becomes.
-
-</floating-box>
+</lesson-float>
 
 ---
 
@@ -104,10 +102,10 @@ enough to be the only thing on the page besides the passage name.
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
-[3] Passages appear in a scrollable box. You can page up and down using the 1
-and 2 keys on your keyboard. [4] So the whole idea is that this will give you a
-useful area for reading the passage, [5] without having to navigate to another
-slide.
+[3] Passages appear in a scrollable box. You can page up and down using the Up
+Arrow and Down Arrow keys on your keyboard. [4] So the whole idea is that this
+will give you a useful area for reading the passage, [5] without having to
+navigate to another slide.
 
 </passage>
 

@@ -30,7 +30,6 @@
     <script src="dist/reveal.js"></script>
     <script src="dist/plugin/notes.js"></script>
     <script src="dist/plugin/markdown.js"></script>
-    <script src="dist/plugin/zoom.js"></script>
     <script src="scripts/simplifier.js"></script>
     <script src="scripts/verse-formatter.js"></script>
     <script src="scripts/perform-scroll.js"></script>
@@ -38,40 +37,6 @@
     <script src="scripts/move-pointer.js"></script>
     <script src="scripts/pointer-broadcaster.js"></script>
     <script>
-      // key listener
-      document.addEventListener("keydown", (ev) => {
-        // keys 1 and 2 perform scrolling
-        if (ev.key == "1" || ev.key == "2") {
-          const direction = ev.key == "1" ? "up" : "down";
-
-          performScroll(direction);
-          broadcastScroll(direction);
-
-          return false;
-        }
-
-        // key ctrl-M toggles pointer visibility
-        if (ev.key.toLowerCase() == "m" && ev.ctrlKey) {
-          ev.preventDefault();
-
-          togglePointer();
-          showPointer();
-          movePointer();
-          broadcastPointer();
-
-          return false;
-        }
-      });
-
-      // mouse listener
-      document.addEventListener("mousemove", (ev) => {
-        updatePointer(ev.clientX, ev.clientY);
-        showPointer();
-        movePointer();
-        broadcastPointer();
-      });
-
-      // Reveal initialization
       Reveal.initialize({
         width: 1920,
         height: 1080,
@@ -79,96 +44,42 @@
         minScale: 0.2,
         maxScale: 4.0,
         hash: true,
-        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
+        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes],
         transition: "fade",
         transitionSpeed: "fast",
         slideNumber: true,
+        controls: false,
         markdown: {
           smartypants: true,
         },
+        keyboard: {
+          // up  arrow
+          38: () => {
+            performScroll("up");
+            broadcastScroll("up");
+          },
+          // down arrow
+          40: () => {
+            performScroll("down");
+            broadcastScroll("down");
+          },
+          // "P" key
+          80: () => {
+            togglePointer();
+          },
+        },
+      }).then(() => {
+        establishScrollChannel();
+        establishPointerChannel();
       });
 
       // called when each slide appears
       Reveal.on("slidechanged", (event) => {
-        establishPointerChannel();
-
         const passage = event.currentSlide.querySelector("passage");
         if (passage) {
           passage.scrollTop = 0;
-          establishScrollChannel();
         }
       });
     </script>
   </body>
 </html>
-
-<!--
-
-Look into https://github.com/denniskniep/reveal.js-plugin-spotlight for keys on how to
-make this work as a plugin
-
-Also worth looking into:
-
-Q: revealjs plugin that allows a div to scroll on keystroke
-
-A: There isn't a native Reveal.js plugin dedicated solely to scrolling a
-specific  via keystrokes. Instead, the most reliable and efficient way to
-achieve this is by configuring Reveal's built-in keyboard handler to trigger a
-simple JavaScript  or  function on your target element. 
-
-For additional viewing flexibility, see native options in the Scroll View -
-Reveal.js guide. 
-
-Implementation Guide 
-
-1. Add CSS for your Scrollable Div
-
-   Ensure your  has a fixed height, hidden vertical overflow, and a custom ID.
-   [1, 2, 3, 4]  
-
-   CSS #scrollable-box { height: 400px; overflow-y: auto; border: 1px solid
-    #ccc;
-   }
-
-2. Configure Reveal.js Keyboard Bindings
-
-   Add a custom configuration to your function. You can bind specific keys (like
-   or ) to scroll the . [5, 6]  
-
-   JavaScript
-   Reveal.initialize({
-     // Other Reveal options...
-     
-     keyboard: {
-       // Keycode 40 is Arrow Down. This scrolls down 100px on keypress
-       40: function() {
-         var box = document.getElementById('scrollable-box');
-         box.scrollTop += 100; 
-       },
-       
-       // Keycode 38 is Arrow Up
-       38: function() {
-         var box = document.getElementById('scrollable-box');
-         box.scrollTop -= 100;
-       }
-     }
-   });
-
-[1] https://www.educative.io/answers/how-to-make-a-div-vertically-scrollable
-[2] https://www.dhiwise.com/post/how-to-make-a-div-scrollable-a-simple-guide-for-developers
-[3] https://divibooster.com/reveal-a-divi-module-or-row-section-when-button-clicked/
-[4] https://www.elegantthemes.com/blog/divi-resources/how-to-create-a-scroll-container-for-your-divi-comments-module
-[5] https://tutorials.sitecast.com/tutorials/how-to-use-reveal-js-for-a-cloud-based-presentation-deck/
-[6] https://stackoverflow.com/questions/8805550/scroll-div-with-arrow-keys
-
-
-
-
-
-
-
-
-
-
-
--->

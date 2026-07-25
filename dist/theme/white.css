@@ -347,7 +347,7 @@ lesson-section {
   text-align: center;
 }
 
-left-block {
+lesson-left {
   display: block;
   position: absolute;
   top: 0;
@@ -359,7 +359,7 @@ left-block {
   text-align: left;
 }
 
-right-block {
+lesson-right {
   display: block;
   position: absolute;
   top: 0;
@@ -369,7 +369,7 @@ right-block {
   text-align: left;
 }
 
-floating-box {
+lesson-float {
   position: fixed;
   top: 50%;
   left: 50%;

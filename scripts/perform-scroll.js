@@ -1,6 +1,9 @@
 // A routine to scroll the contents of the <passage> element based on given direction
 
 function performScroll(direction) {
+  const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
+  if (isUpcomingSlide) return;
+
   const currentSlide = Reveal.getCurrentSlide();
   const passage = currentSlide.querySelector("passage");
   if (!passage) return;
