@@ -8,8 +8,3 @@ Current tasks in this branch
 [ ] Move the project-specific styles into their own files so that we could use
     other themes if desired.
 
-[ ] Move the scroll attributes into their own style class so that they could be
-    applied to other elements as desired.
-
-[/] Don't do scrolling in the upcoming slide.
-
