@@ -35,8 +35,6 @@ function establishLessonPointer() {
 }
 
 function updatePointer(x, y) {
-  establishLessonPointer();
-
   window.lessonPointer.currentX = Math.min(
     window.innerWidth - POINTER_EDGE,
     Math.max(0, x),
@@ -48,8 +46,6 @@ function updatePointer(x, y) {
 }
 
 function togglePointer() {
-  establishLessonPointer();
-
   window.lessonPointer.pointerVisible = !window.lessonPointer.pointerVisible;
 
   showPointer();
@@ -58,8 +54,6 @@ function togglePointer() {
 }
 
 function showPointer() {
-  establishLessonPointer();
-
   const pointerElement = window.document.getElementById("lesson-pointer");
   const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
 
@@ -73,8 +67,6 @@ function showPointer() {
 }
 
 function movePointer() {
-  establishLessonPointer();
-
   const pointerElement = window.document.getElementById("lesson-pointer");
 
   if (window.lessonPointer.pointerVisible) {

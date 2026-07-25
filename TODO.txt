@@ -4,7 +4,7 @@ Current tasks in this branch
 [ ] Fix the scaling for the pointer position between speaker and audience views.
     This is essential before first use.
 
-[ ] Move the establishScrollChannel() and establishPointerChannel() calls to
+[/] Move the establishScrollChannel() and establishPointerChannel() calls to
     outside the slidechanged event so that they're established before the first
     slide shows.  Once that's done, see if you can remove those calls from
     everywhere else.
@@ -13,10 +13,22 @@ Current tasks in this branch
 
 [ ] Consider moving all code into JS modules for better isolation.
 
+[ ] Move the project-specific styles into their own files so that we could use
+    other themes if desired.
 
+[ ] Move the scroll attributes into their own style class so that they could be
+    applied to other elements as desired.
 
+These may help:
 
+Reveal.getComputedSlideSize();
 
+Reveal.initialize().then(() => {
+  // reveal.js is ready
+});
+
+parseInt(Reveal.getCurrentSlide().style['top'], 10) means "116px" becomes 116
+however parseInt(Reveal.getCurrentSlide().style['left'], 10) is NaN because it doesn't have a left
 
 
 

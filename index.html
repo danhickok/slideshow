@@ -46,8 +46,8 @@
         maxScale: 4.0,
         hash: true,
         plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes, RevealZoom],
-        transition: 'fade',
-        transitionSpeed: 'fast',
+        transition: "fade",
+        transitionSpeed: "fast",
         slideNumber: true,
         markdown: {
           smartypants: true,
@@ -55,27 +55,27 @@
         keyboard: {
           // up  arrow
           38: () => {
-            performScroll('up');
-            broadcastScroll('up');
+            performScroll("up");
+            broadcastScroll("up");
           },
           // down arrow
           40: () => {
-            performScroll('down');
-            broadcastScroll('down');
+            performScroll("down");
+            broadcastScroll("down");
           },
           // "P" key
           80: () => {
             togglePointer();
           },
         },
+      }).then(() => {
+        establishScrollChannel();
+        establishPointerChannel();
       });
 
       // called when each slide appears
-      Reveal.on('slidechanged', (event) => {
-        establishScrollChannel();
-        establishPointerChannel();
-
-        const passage = event.currentSlide.querySelector('passage');
+      Reveal.on("slidechanged", (event) => {
+        const passage = event.currentSlide.querySelector("passage");
         if (passage) {
           passage.scrollTop = 0;
         }
