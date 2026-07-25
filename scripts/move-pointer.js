@@ -61,8 +61,9 @@ function showPointer() {
   establishLessonPointer();
 
   const pointerElement = window.document.getElementById("lesson-pointer");
+  const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
 
-  if (window.lessonPointer.pointerVisible) {
+  if (window.lessonPointer.pointerVisible && !isUpcomingSlide) {
     pointerElement.style.display = "block";
     document.body.style.cursor = "none";
   } else {
