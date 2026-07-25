@@ -7,8 +7,8 @@ function establishLessonPointer() {
   if (!window.lessonPointer) {
     window.lessonPointer = {
       pointerVisible: false,
-      currentX: 0,
-      currentY: 0,
+      currentX: -1,
+      currentY: -1,
       originalCursorState: document.body.style.cursor,
     };
 

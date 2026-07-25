@@ -19,6 +19,9 @@ Current tasks in this branch
 [ ] Move the scroll attributes into their own style class so that they could be
     applied to other elements as desired.
 
+[ ] Don't do scrolling in the upcoming slide.
+
+
 
 
 
@@ -44,4 +47,15 @@ left: 37.8
 
 But window.document.querySelector('section.present') comes up null in speaker view.
 
+Which window are we working with?
+* window.frameElement.parentElement.id == 'current-slide'   -> speaker view: current slide
+* window.frameElement.parentElement.id == 'upcoming-slide'  -> speaker view: upcoming slide
+* window.frameElement == null                               -> audience view
+
+But that doesn't always work.  It depends on which iframe has focus.
+
+It appears that the <section> element returned by Reveal.getCurrentSlide() or event.currentSlide
+varies in height with each slide, though it seems to be consistent in width.
+
+currentSlide.getBoundingClientRect() seems to work in audience view
 
