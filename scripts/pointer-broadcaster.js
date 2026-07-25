@@ -5,7 +5,7 @@ function establishPointerChannel() {
   establishLessonPointer();
 
   if (!window.pointerChannel) {
-    window.pointerChannel = new BroadcastChannel('pointer');
+    window.pointerChannel = new BroadcastChannel("pointer");
 
     window.pointerChannel.onmessage = (ev) => {
       window.lessonPointer.pointerVisible = ev.data.visible;
@@ -13,8 +13,13 @@ function establishPointerChannel() {
       const sourceWidth = ev.data.sourceWidth;
       const sourceHeight = ev.data.sourceHeight;
 
-      const scaledX = Math.floor((ev.data.x * window.innerWidth) / sourceWidth);
-      const scaledY = Math.floor((ev.data.y * window.innerHeight) / sourceHeight);
+      const currentSlide = Reveal.getCurrentSlide();
+
+      const factorX = currentSlide.clientWidth / sourceWidth;
+      const factorY = currentSlide.clientHeight / sourceHeight;
+
+      const scaledX = Math.floor(ev.data.x * factorX);
+      const scaledY = Math.floor(ev.data.y * factorY);
 
       updatePointer(scaledX, scaledY);
       showPointer();

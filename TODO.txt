@@ -1,0 +1,24 @@
+Current tasks in this branch
+============================
+
+[ ] Fix the scaling for the pointer position between speaker and audience views.
+    This is essential before first use.
+
+[ ] Move the establishScrollChannel() and establishPointerChannel() calls to
+    outside the slidechanged event so that they're established before the first
+    slide shows.  Once that's done, see if you can remove those calls from
+    everywhere else.
+
+[ ] Turn off navigation controls in audience view when speaker view opens.
+
+[ ] Consider moving all code into JS modules for better isolation.
+
+
+
+
+
+
+
+
+
+
