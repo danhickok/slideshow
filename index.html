@@ -35,6 +35,8 @@
     <script src="scripts/verse-formatter.js"></script>
     <script src="scripts/perform-scroll.js"></script>
     <script src="scripts/scroll-broadcaster.js"></script>
+    <script src="scripts/move-pointer.js"></script>
+    <script src="scripts/pointer-broadcaster.js"></script>
     <script>
       Reveal.initialize({
         width: 1920,
@@ -51,13 +53,19 @@
           smartypants: true,
         },
         keyboard: {
+          // up  arrow
           38: () => {
             performScroll("up");
             broadcastScroll("up");
           },
+          // down arrow
           40: () => {
             performScroll("down");
             broadcastScroll("down");
+          },
+          // "P" key
+          80: () => {
+            togglePointer();
           },
         },
       });
@@ -65,6 +73,7 @@
       // called when each slide appears
       Reveal.on("slidechanged", (event) => {
         establishScrollChannel();
+        establishPointerChannel();
 
         const passage = event.currentSlide.querySelector("passage");
         if (passage) {
