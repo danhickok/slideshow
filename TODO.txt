@@ -1,7 +1,7 @@
 Current tasks in this branch
 ============================
 
-[ ] Fix the scaling for the pointer position between speaker and audience views.
+[/] Fix the scaling for the pointer position between speaker and audience views.
     This is essential before first use.
 
 [/] Move the establishScrollChannel() and establishPointerChannel() calls to

@@ -8,20 +8,25 @@ function establishPointerChannel() {
     window.pointerChannel = new BroadcastChannel("pointer");
 
     window.pointerChannel.onmessage = (ev) => {
+      const slideRect = Reveal.getCurrentSlide().getBoundingClientRect();
+
       window.lessonPointer.pointerVisible = ev.data.visible;
 
-      const sourceWidth = ev.data.sourceWidth;
-      const sourceHeight = ev.data.sourceHeight;
+      const sourceWindowWidth = ev.data.sourceWidth;
+      const sourceWindowHeight = ev.data.sourceHeight;
 
-      const currentSlide = Reveal.getCurrentSlide();
+      const sourceSlideX = ev.data.slideX;
+      const sourceSlideY = ev.data.slideY;
+      const sourceSlideWidth = ev.data.slideWidth;
+      const sourceSlideHeight = ev.data.slideHeight;
 
-      const factorX = window.innerWidth / sourceWidth;
-      const factorY =  window.innerHeight / sourceHeight;
+      const factorX = slideRect.width / sourceSlideWidth;
+      const factorY = slideRect.height / sourceSlideHeight;
 
-      const scaledX = Math.floor(ev.data.x * factorX);
-      const scaledY = Math.floor(ev.data.y * factorY);
+      const destX = Math.floor((ev.data.x - sourceSlideX) * factorX) + slideRect.x;
+      const destY = Math.floor((ev.data.y - sourceSlideY) * factorY) + slideRect.y;
 
-      updatePointer(scaledX, scaledY);
+      updatePointer(destX, destY);
       showPointer();
       movePointer();
     };
@@ -29,11 +34,17 @@ function establishPointerChannel() {
 }
 
 function broadcastPointer() {
+  const slideRect = Reveal.getCurrentSlide().getBoundingClientRect();
+
   window.pointerChannel.postMessage({
     visible: window.lessonPointer.pointerVisible,
     x: window.lessonPointer.currentX,
     y: window.lessonPointer.currentY,
     sourceWidth: window.innerWidth,
     sourceHeight: window.innerHeight,
+    slideX: slideRect.x,
+    slideY: slideRect.y,
+    slideWidth: slideRect.width,
+    slideHeight: slideRect.height,
   });
 }
