@@ -1,7 +1,8 @@
 Current tasks in this branch
 ============================
 
-[ ] Consider moving all code into JS modules for better isolation.
+[ ] Consider moving all code into JS modules for better isolation.  Or maybe
+    move those external routines to a plugin structure so we can share them.
 
 [ ] Move the project-specific styles into their own files so that we could use
     other themes if desired.
