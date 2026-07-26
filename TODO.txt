@@ -1,8 +1,6 @@
 Current tasks in this branch
 ============================
 
-[ ] Turn off navigation controls in audience view when speaker view opens.
-
 [ ] Consider moving all code into JS modules for better isolation.
 
 [ ] Move the project-specific styles into their own files so that we could use
