@@ -61,7 +61,7 @@ In this app, the up and down arrow keys are reserved for scrollable text.  The t
 
 You can press the "S" key to open the speaker view in a separate window that shows the current slide, the upcoming slide, and speaker notes.  This is a via a Reveal.js plugin.
 
-This app also a feature where when you press the "P" key, a finger-shaped pointer is displayed that moves with your mouse.  The pointer is visible in both the main slide view and the speaker view.  Press "P" again to turn off the pointer.
+This app also includes a feature where when you press the "P" key, a finger-shaped pointer is displayed that moves with your mouse.  The pointer is visible in both the main slide view and the speaker view.  Press "P" again to turn off the pointer.
 
 ### When you're done with the slides
 
