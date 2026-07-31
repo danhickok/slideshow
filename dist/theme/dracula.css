@@ -31,6 +31,13 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
+  --l-passage-font: "Roboto Slab";
+  --l-passage-color: #222;
+  --l-passage-background-color: #e5f2fa;
+  --l-passage-scrollbar-slide: #00aaff;
+  --l-passage-scrollbar-background: #e5f2fa;
+  --l-verse-font: "Roboto";
+  --l-verse-color: #00aaff;
 }
 .reveal-viewport {
   background: var(--r-background);
