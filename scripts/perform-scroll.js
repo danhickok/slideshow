@@ -1,29 +1,31 @@
-// A routine to scroll the contents of the <passage> element based on given direction
+// A routine to scroll the contents of the <div> element with .scrollable class
+// based on given direction
 
 function performScroll(direction) {
   const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
   if (isUpcomingSlide) return;
 
   const currentSlide = Reveal.getCurrentSlide();
-  const passage = currentSlide.querySelector(".scrollable");
-  if (!passage) return;
+  const scrollableDiv = currentSlide.querySelector(".scrollable");
+  if (!scrollableDiv) return;
 
-  const isAtBottom = passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1;
-  const isAtTop = passage.scrollTop <= 0;
+  const isAtBottom = scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+    scrollableDiv.clientHeight + 1;
+  const isAtTop = scrollableDiv.scrollTop <= 0;
 
   // Scroll amount leaves about one line of text from the previous page
-  const scrollAmount = passage.clientHeight - 180;
+  const scrollAmount = scrollableDiv.clientHeight - 180;
 
   switch (direction) {
     case "up":
       if (!isAtTop) {
-        passage.scrollBy({ top: -scrollAmount, behavior: "smooth" });
+        scrollableDiv.scrollBy({ top: -scrollAmount, behavior: "smooth" });
       }
       break;
 
     case "down":
       if (!isAtBottom) {
-        passage.scrollBy({ top: scrollAmount, behavior: "smooth" });
+        scrollableDiv.scrollBy({ top: scrollAmount, behavior: "smooth" });
       }
       break;
   }
