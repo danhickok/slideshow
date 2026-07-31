@@ -8,6 +8,10 @@ const Simplifier = {
       if (slides[i].querySelector("lesson-section")) {
         slides[i].setAttribute("data-transition", "slide");
       }
+      const passage = slides[i].querySelector("passage");
+      if (passage) {
+        passage.classList.add("passage", "scrollable");
+      }
     }
     deck.layout();
   },

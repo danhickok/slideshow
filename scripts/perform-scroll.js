@@ -5,7 +5,7 @@ function performScroll(direction) {
   if (isUpcomingSlide) return;
 
   const currentSlide = Reveal.getCurrentSlide();
-  const passage = currentSlide.querySelector("passage");
+  const passage = currentSlide.querySelector(".scrollable");
   if (!passage) return;
 
   const isAtBottom = passage.scrollHeight - passage.scrollTop <= passage.clientHeight + 1;
