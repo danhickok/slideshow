@@ -31,13 +31,15 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-passage-font: "Roboto Slab";
-  --l-passage-color: #222;
-  --l-passage-background-color: #e5f2fa;
-  --l-passage-scrollbar-slide: #00aaff;
-  --l-passage-scrollbar-background: #e5f2fa;
-  --l-verse-font: "Roboto";
-  --l-verse-color: #00aaff;
+  --l-passage-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+    helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --l-passage-color: #fff;
+  --l-passage-background-color: #000;
+  --l-passage-scrollbar-slide: #444;
+  --l-passage-scrollbar-background: #000;
+  --l-verse-font: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+    helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --l-verse-color: #8be9fd;
 }
 .reveal-viewport {
   background: var(--r-background);

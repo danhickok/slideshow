@@ -12,7 +12,7 @@
   --r-heading-color: #333;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: -0.05em;
-  --r-heading-text-transform: uppercase;
+  --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
@@ -28,12 +28,12 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
-  --l-passage-font: "Roboto Slab";
+  --l-passage-font: "Open Sans", sans-serif;
   --l-passage-color: #222;
   --l-passage-background-color: #e5f2fa;
   --l-passage-scrollbar-slide: #00aaff;
   --l-passage-scrollbar-background: #e5f2fa;
-  --l-verse-font: "Roboto";
+  --l-verse-font: "Open Sans", sans-serif;
   --l-verse-color: #00aaff;
 }
 .reveal-viewport {

@@ -54,12 +54,12 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
-  --l-passage-font: serif;
+  --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #222;
   --l-passage-background-color: #f1f2f3;
   --l-passage-scrollbar-slide: #c8c8c8;
   --l-passage-scrollbar-background: #f1f2f3;
-  --l-verse-font: serif;
+  --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-verse-color: #627179;
 }
 .reveal-viewport {

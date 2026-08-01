@@ -18,13 +18,10 @@
   --r-heading-color: #eee;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: uppercase;
+  --r-heading-text-transform: none;
   --r-heading-text-shadow: 0px 0px 6px #0003;
   --r-heading-font-weight: normal;
-  --r-heading1-text-shadow:
-    0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
-    0 6px 1px #0000001a, 0 0 5px #0000001a, 0 1px 3px #0000004d, 0 3px 5px #0003,
-    0 5px 10px #00000040, 0 20px 20px #00000026;
+  --r-heading1-text-shadow: none;
   --r-heading1-size: 3.77em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
@@ -37,13 +34,13 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-passage-font: "Roboto Slab";
-  --l-passage-color: #222;
-  --l-passage-background-color: #e5f2fa;
-  --l-passage-scrollbar-slide: #00aaff;
-  --l-passage-scrollbar-background: #e5f2fa;
-  --l-verse-font: "Roboto";
-  --l-verse-color: #00aaff;
+  --l-passage-font: Lato, sans-serif;
+  --l-passage-color: #eee;
+  --l-passage-background-color: #1c1e20;
+  --l-passage-scrollbar-slide: #4f555c;
+  --l-passage-scrollbar-background: #1c1e20;
+  --l-verse-font: Lato, sans-serif;
+  --l-verse-color: #6bc2ed;
 }
 .reveal-viewport {
   background: var(--r-background);
