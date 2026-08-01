@@ -31,11 +31,11 @@
   --r-background-color: #fff;
   --r-main-font: "Source Sans Pro", Helvetica, sans-serif;
   --r-main-font-size: 42px;
-  --r-main-color: #222;
+  --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: "Source Sans Pro", Helvetica, sans-serif;
-  --r-heading-color: #222;
+  --r-heading-color: #000;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
@@ -52,15 +52,15 @@
   --r-link-color-hover: #4a8be2;
   --r-selection-background-color: #2a76dd;
   --r-selection-color: #fff;
-  --r-overlay-element-bg-color: 0 0 0;
-  --r-overlay-element-fg-color: 240 240 240;
+  --r-overlay-element-bg-color: 0, 0, 0;
+  --r-overlay-element-fg-color: 240, 240, 240;
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
-  --l-passage-color: #222;
-  --l-passage-background-color: #f1f2f3;
-  --l-passage-scrollbar-slide: #c8c8c8;
-  --l-passage-scrollbar-background: #f1f2f3;
+  --l-passage-color: #000;
+  --l-passage-background-color: #f2f8fb;
+  --l-passage-scrollbar-slide: #d7dee1;
+  --l-passage-scrollbar-background: #f2f8fb;
   --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
-  --l-verse-color: #627179;
+  --l-verse-color: #8af;
 }
 .reveal-viewport {
   background: var(--r-background);

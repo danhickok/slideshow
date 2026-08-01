@@ -28,14 +28,14 @@
 }
 :root {
   --r-background: #2b2b2b;
-  --r-background-color: #fff;
+  --r-background-color: #191919;
   --r-main-font: "Source Sans Pro", Helvetica, sans-serif;
   --r-main-font-size: 42px;
-  --r-main-color: #222;
+  --r-main-color: #fff;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: "Source Sans Pro", Helvetica, sans-serif;
-  --r-heading-color: #222;
+  --r-heading-color: #fff;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
@@ -47,20 +47,20 @@
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #2a76dd;
-  --r-link-color-dark: #1f64c1;
-  --r-link-color-hover: #4a8be2;
-  --r-selection-background-color: #2a76dd;
+  --r-link-color: #42affa;
+  --r-link-color-dark: #149bf9;
+  --r-link-color-hover: #5ebbfb;
+  --r-selection-background-color: #0579c8;
   --r-selection-color: #fff;
-  --r-overlay-element-bg-color: 0 0 0;
-  --r-overlay-element-fg-color: 240 240 240;
+  --r-overlay-element-bg-color: 240, 240, 240;
+  --r-overlay-element-fg-color: 0, 0, 0;
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
-  --l-passage-color: #222;
-  --l-passage-background-color: #f1f2f3;
-  --l-passage-scrollbar-slide: #c8c8c8;
-  --l-passage-scrollbar-background: #f1f2f3;
+  --l-passage-color: #fff;
+  --l-passage-background-color: #3a3a3a;
+  --l-passage-scrollbar-slide: #aaa;
+  --l-passage-scrollbar-background: #3a3a3a;
   --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
-  --l-verse-color: #627179;
+  --l-verse-color: #aaa;
 }
 .reveal-viewport {
   background: var(--r-background);
@@ -305,12 +305,12 @@
     background-color: var(--r-background-color);
   }
 }
-section.has-dark-background,
-section.has-dark-background h1,
-section.has-dark-background h2,
-section.has-dark-background h3,
-section.has-dark-background h4,
-section.has-dark-background h5,
-section.has-dark-background h6 {
-  color: #fff;
+section.has-light-background,
+section.has-light-background h1,
+section.has-light-background h2,
+section.has-light-background h3,
+section.has-light-background h4,
+section.has-light-background h5,
+section.has-light-background h6 {
+  color: #222;
 }

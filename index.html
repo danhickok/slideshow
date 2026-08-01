@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="dist/theme/white-roboto.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
   </head>
   <body>
     <div class="reveal">
@@ -75,9 +76,9 @@
 
       // called when each slide appears
       Reveal.on("slidechanged", (event) => {
-        const passage = event.currentSlide.querySelector("passage");
-        if (passage) {
-          passage.scrollTop = 0;
+        const scrollableDiv = event.currentSlide.querySelector(".scrollable");
+        if (scrollableDiv) {
+          scrollableDiv.scrollTop = 0;
         }
       });
     </script>
