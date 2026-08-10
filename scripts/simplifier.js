@@ -12,6 +12,16 @@ const Simplifier = {
       if (passage) {
         passage.classList.add("passage", "scrollable");
       }
+      const defragment = (node) => {
+        for (let ch of node.childNodes) {
+          defragment(ch);
+          if (ch.nodeType === Node.TEXT_NODE && ch.nodeValue?.includes("{fragment}")) {
+            ch.nodeValue = ch.nodeValue.replace("{fragment}", "");
+            ch.parentElement.classList.add("fragment");
+          }
+        }
+      };
+      defragment(slides[i]);
     }
     deck.layout();
   },
