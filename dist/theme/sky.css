@@ -291,3 +291,10 @@ section.has-dark-background h6 {
 .reveal a {
   line-height: 1.3em;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: white;
+  background-image: url("../../images/blue-abstract-on-white.jpg");
+  background-size: cover;
+}

@@ -314,3 +314,10 @@ section.has-light-background h4 {
 .reveal small code {
   vertical-align: baseline;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: white;
+  background-image: url("../../images/blue-abstract-on-white.jpg");
+  background-size: cover;
+}

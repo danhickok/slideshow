@@ -7,6 +7,7 @@ const Simplifier = {
     for (let i = 0; i < slides.length; ++i) {
       if (slides[i].querySelector("lesson-section")) {
         slides[i].setAttribute("data-transition", "slide");
+        slides[i].setAttribute("data-state", "lesson-section-background");
       }
       const passage = slides[i].querySelector("passage");
       if (passage) {
@@ -15,7 +16,8 @@ const Simplifier = {
       const defragment = (node) => {
         for (let ch of node.childNodes) {
           defragment(ch);
-          if (ch.nodeType === Node.TEXT_NODE && ch.nodeValue?.includes("{fragment}")) {
+          if (ch.nodeType == Node.TEXT_NODE &&
+              ch.nodeValue?.includes("{fragment}")) {
             ch.nodeValue = ch.nodeValue.replace("{fragment}", "");
             ch.parentElement.classList.add("fragment");
           }
