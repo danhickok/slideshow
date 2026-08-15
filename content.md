@@ -182,7 +182,7 @@ Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue the
 [1] This would be the text of the passage. The passage is designed to be tall
 enough to be the only thing on the page besides the passage name.
 
-[2] The "verse numbers" in your markdown are in square brackets, but they're
+[2] The verse numbers in your markdown are in square brackets, but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
