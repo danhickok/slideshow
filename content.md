@@ -83,39 +83,75 @@ sentences.  The more text you add, the taller the box becomes.
 
 ---
 
-### Animation _(part 1)_
+## Animation
 
-Use {&ZeroWidthSpace;f&ZeroWidthSpace;} to <span>{f}fade in text.</span>
+{f} You can delay text (or anything) from appearing right away by including
+{&ZeroWidthSpace;f&ZeroWidthSpace;} anywhere on the line to fade in when it
+appears.  For example,
 
-Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
-
-Use {&ZeroWidthSpace;fu&ZeroWidthSpace;} to <span>{fu} fade up text.</span>
-
-Use {&ZeroWidthSpace;fd&ZeroWidthSpace;} to <span>{fd} fade down text.</span>
-
-Use {&ZeroWidthSpace;fl&ZeroWidthSpace;} to <span>{fl} fade left text.</span>
-
-Use {&ZeroWidthSpace;fr&ZeroWidthSpace;} to <span>{fr} fade right text.</span>
+* {f} Here's the first bullet point in a list
+* {f} Here's the second bullet point
+* {f} And here's the third bullet point
 
 ---
 
-### Animation _(part 2)_
+<lesson-left>
 
-Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
+<center>
 
-Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-out text.</span>
+\
+\
+It even works on images:
 
-Use {&ZeroWidthSpace;g&ZeroWidthSpace;} to <span>{g} grow text.</span>
+</center>
 
-Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
+</lesson-left>
 
-Use {&ZeroWidthSpace;s&ZeroWidthSpace;} to <span>{s} shrink text.</span>
+<lesson-right>
 
-Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
+![](../images/mickey_mouse.png) {f}
+
+</lesson-right>
 
 ---
 
-### Animation _(part 3)_
+And there are variations to fading:
+
+* Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
+* Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
+* Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
+* Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-fade out text.</span>
+* Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
+
+{f} You can use these on whole lines, or part of lines by placing text inside a
+`<span>` tag.
+
+---
+
+Some work better on entire lines only:
+
+{fu} Use {&ZeroWidthSpace;fu&ZeroWidthSpace;} to fade up text.
+
+{fd} Use {&ZeroWidthSpace;fd&ZeroWidthSpace;} to fade down text.
+
+{fl} Use {&ZeroWidthSpace;fl&ZeroWidthSpace;} to fade left text.
+
+{fr} Use {&ZeroWidthSpace;fr&ZeroWidthSpace;} to fade right text.
+
+---
+
+<center>
+
+{g} Use {&ZeroWidthSpace;g&ZeroWidthSpace;} to grow text.
+
+{s} Use {&ZeroWidthSpace;s&ZeroWidthSpace;} to shrink text.
+
+{b} Use {&ZeroWidthSpace;b&ZeroWidthSpace;} to make text appear from a blur.
+
+
+</center>
+
+---
 
 Use {&ZeroWidthSpace;hr&ZeroWidthSpace;} to <span>{hr} highlight text red</span>
 
@@ -128,14 +164,6 @@ Use {&ZeroWidthSpace;hcr&ZeroWidthSpace;} to <span>{hcr} highlight text red then
 Use {&ZeroWidthSpace;hcg&ZeroWidthSpace;} to <span>{hcg} highlight text green then turn normal.</span>
 
 Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue then turn normal.</span>
-
----
-
-### Animation _(part 4)_
-
-Use {&ZeroWidthSpace;b&ZeroWidthSpace;} to <span>{b} blur text.</span>
-
-
 
 ---
 

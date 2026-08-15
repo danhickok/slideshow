@@ -148,7 +148,7 @@ verse {
 /* custom fragment animation */
 
 .fragment.blur {
-  filter: blur(5px);
+  filter: blur(0.2em);
 }
 .fragment.blur.visible {
   filter: none;
