@@ -64,11 +64,11 @@ and `<lesson-right>` tags.  The text in each block wraps around.
 
 </lesson-left>
 
-<lesson-right class="fragment">
+<lesson-right>
 
-The two blocks are designed to take up the entire slide by themselves.
+{f}The two blocks are designed to take up the entire slide by themselves.
 
-So don't add any heading or footing to the slide.
+{f}So don't add any heading or footing to the slide.
 
 </lesson-right>
 
@@ -80,6 +80,62 @@ You'll notice that the text wraps around and allows it to expand for longer
 sentences.  The more text you add, the taller the box becomes.
 
 </lesson-float>
+
+---
+
+### Animation _(part 1)_
+
+Use {&ZeroWidthSpace;f&ZeroWidthSpace;} to <span>{f}fade in text.</span>
+
+Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
+
+Use {&ZeroWidthSpace;fu&ZeroWidthSpace;} to <span>{fu} fade up text.</span>
+
+Use {&ZeroWidthSpace;fd&ZeroWidthSpace;} to <span>{fd} fade down text.</span>
+
+Use {&ZeroWidthSpace;fl&ZeroWidthSpace;} to <span>{fl} fade left text.</span>
+
+Use {&ZeroWidthSpace;fr&ZeroWidthSpace;} to <span>{fr} fade right text.</span>
+
+---
+
+### Animation _(part 2)_
+
+Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
+
+Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-out text.</span>
+
+Use {&ZeroWidthSpace;g&ZeroWidthSpace;} to <span>{g} grow text.</span>
+
+Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
+
+Use {&ZeroWidthSpace;s&ZeroWidthSpace;} to <span>{s} shrink text.</span>
+
+Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
+
+---
+
+### Animation _(part 3)_
+
+Use {&ZeroWidthSpace;hr&ZeroWidthSpace;} to <span>{hr} highlight text red</span>
+
+Use {&ZeroWidthSpace;hg&ZeroWidthSpace;} to <span>{hg} highlight text green</span>
+
+Use {&ZeroWidthSpace;hb&ZeroWidthSpace;} to <span>{hb} highlight text blue</span>
+
+Use {&ZeroWidthSpace;hcr&ZeroWidthSpace;} to <span>{hcr} highlight text red then turn normal.</span>
+
+Use {&ZeroWidthSpace;hcg&ZeroWidthSpace;} to <span>{hcg} highlight text green then turn normal.</span>
+
+Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue then turn normal.</span>
+
+---
+
+### Animation _(part 4)_
+
+Use {&ZeroWidthSpace;b&ZeroWidthSpace;} to <span>{b} blur text.</span>
+
+
 
 ---
 
@@ -98,7 +154,7 @@ sentences.  The more text you add, the taller the box becomes.
 [1] This would be the text of the passage. The passage is designed to be tall
 enough to be the only thing on the page besides the passage name.
 
-[2] The verse numbers in your markdown are in square brackets, but they're
+[2] The "verse numbers" in your markdown are in square brackets, but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
@@ -113,7 +169,7 @@ navigate to another slide.
 
 It will take some practice to get the size of the slides right.  The text
 appears centered vertically but left-justified (unless using one of the
-special slide tags).
+special slide tags).  Here's some practice text:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

@@ -71,8 +71,9 @@ lesson-float {
 
 /* vertical spacing on lists */
 
-ul li, ol li {
-    margin-bottom: 0.3em;
+ul li,
+ol li {
+  margin-bottom: 0.3em;
 }
 
 /* because I'm opinionated about how tables should look */
@@ -142,4 +143,13 @@ verse {
   font-size: 0.8em;
   padding-left: 0.1em;
   padding-right: 0.1em;
+}
+
+/* custom fragment animation */
+
+.fragment.blur {
+  filter: blur(5px);
+}
+.fragment.blur.visible {
+  filter: none;
 }
