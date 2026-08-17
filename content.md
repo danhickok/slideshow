@@ -179,16 +179,20 @@ Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue the
 
 <passage>
 
-[1] This would be the text of the passage. The passage is designed to be tall
+[1] This slideshow application can be used for anything, but its primary
+purpose is for giving Bible Study lessons.  When quoting scripture, then,
+you would put it in a `<passage>` tag.
+
+[2] This would be the text of the passage. The passage is designed to be tall
 enough to be the only thing on the page besides the passage name.
 
-[2] The verse numbers in your markdown are in square brackets, but they're
+[3] The verse numbers in your markdown are in square brackets, but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
-[3] Passages appear in a scrollable box. You can page up and down using the Up
-Arrow and Down Arrow keys on your keyboard. [4] So the whole idea is that this
-will give you a useful area for reading the passage, [5] without having to
+[4] Passages appear in a scrollable box. You can page up and down using the Up
+Arrow and Down Arrow keys on your keyboard. [5] So the whole idea is that this
+will give you a useful area for reading the passage, [6] without having to
 navigate to another slide.
 
 </passage>
