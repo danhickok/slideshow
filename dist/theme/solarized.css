@@ -297,7 +297,7 @@ section.has-dark-background h6 {
 
 /* Custom for lessons */
 .lesson-section-background {
-  background-color: white;
-  background-image: url("../../images/blue-abstract-on-white.jpg");
+  background-color: #fdf6e3;
+  background-image: url("../../images/solarized.jpg");
   background-size: cover;
 }
