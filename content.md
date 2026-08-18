@@ -64,11 +64,11 @@ and `<lesson-right>` tags.  The text in each block wraps around.
 
 </lesson-left>
 
-<lesson-right class="fragment">
+<lesson-right>
 
-The two blocks are designed to take up the entire slide by themselves.
+{f}The two blocks are designed to take up the entire slide by themselves.
 
-So don't add any heading or footing to the slide.
+{f}So don't add any heading or footing to the slide.
 
 </lesson-right>
 
@@ -80,6 +80,90 @@ You'll notice that the text wraps around and allows it to expand for longer
 sentences.  The more text you add, the taller the box becomes.
 
 </lesson-float>
+
+---
+
+## Animation
+
+{f} You can delay text (or anything) from appearing right away by including
+{&ZeroWidthSpace;f&ZeroWidthSpace;} anywhere on the line to fade in when it
+appears.  For example,
+
+* {f} Here's the first bullet point in a list
+* {f} Here's the second bullet point
+* {f} And here's the third bullet point
+
+---
+
+<lesson-left>
+
+<center>
+
+\
+\
+It even works on images:
+
+</center>
+
+</lesson-left>
+
+<lesson-right>
+
+![](../images/mickey_mouse.png) {f}
+
+</lesson-right>
+
+---
+
+And there are variations to fading:
+
+* Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
+* Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
+* Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
+* Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-fade out text.</span>
+* Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
+
+{f} You can use these on whole lines, or part of lines by placing text inside a
+`<span>` tag.
+
+---
+
+Some work better on entire lines only:
+
+{fu} Use {&ZeroWidthSpace;fu&ZeroWidthSpace;} to fade up text.
+
+{fd} Use {&ZeroWidthSpace;fd&ZeroWidthSpace;} to fade down text.
+
+{fl} Use {&ZeroWidthSpace;fl&ZeroWidthSpace;} to fade left text.
+
+{fr} Use {&ZeroWidthSpace;fr&ZeroWidthSpace;} to fade right text.
+
+---
+
+<center>
+
+{g} Use {&ZeroWidthSpace;g&ZeroWidthSpace;} to grow text.
+
+{s} Use {&ZeroWidthSpace;s&ZeroWidthSpace;} to shrink text.
+
+{b} Use {&ZeroWidthSpace;b&ZeroWidthSpace;} to make text appear from a blur.
+
+
+</center>
+
+---
+
+Use {&ZeroWidthSpace;hr&ZeroWidthSpace;} to <span>{hr} highlight text red</span>
+
+Use {&ZeroWidthSpace;hg&ZeroWidthSpace;} to <span>{hg} highlight text green</span>
+
+Use {&ZeroWidthSpace;hb&ZeroWidthSpace;} to <span>{hb} highlight text blue</span>
+
+Use {&ZeroWidthSpace;hcr&ZeroWidthSpace;} to <span>{hcr} highlight text red then turn normal.</span>
+
+Use {&ZeroWidthSpace;hcg&ZeroWidthSpace;} to <span>{hcg} highlight text green then turn normal.</span>
+
+Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue then turn normal.</span>
 
 ---
 
@@ -95,16 +179,20 @@ sentences.  The more text you add, the taller the box becomes.
 
 <passage>
 
-[1] This would be the text of the passage. The passage is designed to be tall
+[1] This slideshow application can be used for anything, but its primary
+purpose is for giving Bible Study lessons.  When quoting scripture, then,
+you would put it in a `<passage>` tag.
+
+[2] This would be the text of the passage. The passage is designed to be tall
 enough to be the only thing on the page besides the passage name.
 
-[2] The verse numbers in your markdown are in square brackets, but they're
+[3] The verse numbers in your markdown are in square brackets, but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
-[3] Passages appear in a scrollable box. You can page up and down using the Up
-Arrow and Down Arrow keys on your keyboard. [4] So the whole idea is that this
-will give you a useful area for reading the passage, [5] without having to
+[4] Passages appear in a scrollable box. You can page up and down using the Up
+Arrow and Down Arrow keys on your keyboard. [5] So the whole idea is that this
+will give you a useful area for reading the passage, [6] without having to
 navigate to another slide.
 
 </passage>
@@ -113,7 +201,7 @@ navigate to another slide.
 
 It will take some practice to get the size of the slides right.  The text
 appears centered vertically but left-justified (unless using one of the
-special slide tags).
+special slide tags).  Here's some practice text:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

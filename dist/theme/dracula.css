@@ -317,3 +317,10 @@ section.has-light-background h6 {
 .reveal ol li::marker {
   color: var(--r-list-bullet-color);
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #2b2b2b;
+  background-image: url("../../images/dracula.jpg");
+  background-size: cover;
+}

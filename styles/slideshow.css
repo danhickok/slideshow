@@ -11,7 +11,7 @@
 }
 .reveal .slides section,
 .reveal .slides section > section {
-  line-height: 1.0;
+  line-height: 1;
   font-weight: inherit;
   text-align: left;
 }
@@ -69,6 +69,13 @@ lesson-float {
   box-shadow: 0 20px 75px rgba(0, 0, 0, 0.3);
 }
 
+/* vertical spacing on lists */
+
+ul li,
+ol li {
+  margin-bottom: 0.3em;
+}
+
 /* because I'm opinionated about how tables should look */
 
 table {
@@ -76,48 +83,73 @@ table {
   border-collapse: collapse;
 }
 
-table thead, table th, table tbody, table td {
+table thead,
+table th,
+table tbody,
+table td {
   border: 4px solid var(--r-main-color);
 }
 
 table th {
-  color:var(--r-background-color);
+  color: var(--r-background-color);
   background-color: var(--r-heading-color);
 }
 
 /* for scrollable elements */
 
 .scrollable {
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    padding: 0.3em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  padding: 0.3em;
+}
+
+.lesson-image-container {
+  height: 950px;
+  width: 1790px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid var(--r-main-color);
+}
+
+.lesson-image {
+  padding-left: 40px;
 }
 
 /* For passages and verses */
 
 .passage {
-    font-family: var(--l-passage-font);
-    line-height: 1.2em;
-    color: var(--l-passage-color);
-    background-color: var(--l-passage-background-color);
-    scrollbar-color: var(--l-passage-scrollbar-slide) var(--l-passage-scrollbar-background);
+  font-family: var(--l-passage-font);
+  line-height: 1.2em;
+  color: var(--l-passage-color);
+  background-color: var(--l-passage-background-color);
+  scrollbar-color: var(--l-passage-scrollbar-slide) var(--l-passage-scrollbar-background);
 }
 
 passage {
-    display: block;
-    line-height: 1.2em;
-    border: 0;
-    outline: none;
-    height: 850px;
+  display: block;
+  line-height: 1.2em;
+  border: 0;
+  outline: none;
+  height: 850px;
 }
 
 verse {
-    display: inline;
-    color: var(--l-verse-color);
-    font-family: var(--l-verse-font);
-    font-style: italic;
-    font-size: 0.8em;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
+  display: inline;
+  color: var(--l-verse-color);
+  font-family: var(--l-verse-font);
+  font-style: italic;
+  font-size: 0.8em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+
+/* custom fragment animation */
+
+.fragment.blur {
+  filter: blur(0.2em);
+}
+.fragment.blur.visible {
+  filter: none;
 }

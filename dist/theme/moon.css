@@ -294,3 +294,10 @@ section.has-light-background h5,
 section.has-light-background h6 {
   color: #222;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #002b36;
+  background-image: url("../../images/moon.jpg");
+  background-size: cover;
+}

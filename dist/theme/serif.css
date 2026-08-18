@@ -28,7 +28,7 @@
   --r-overlay-element-fg-color: 240 240 240;
   --l-passage-font: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
   --l-passage-color: #222;
-  --l-passage-background-color: #e5f2fa;
+  --l-passage-background-color: #ddddda;
   --l-passage-scrollbar-slide: #00aaff;
   --l-passage-scrollbar-background: #e5f2fa;
   --l-verse-font: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
@@ -288,4 +288,11 @@ section.has-dark-background h6 {
 }
 .reveal a {
   line-height: 1.3em;
+}
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #f0f1eb;
+  background-image: url("../../images/serif.jpg");
+  background-size: cover;
 }

@@ -1,4 +1,4 @@
-# slideshow
+# Slideshow
 
 This is my own take on slides using [Reveal.js](https://revealjs.com/).  Working from the compiled product of version 6.0, I've added features that I use during my ABF lessons.
 
@@ -34,12 +34,13 @@ The original version of "content.md" has examples you can follow.  But here's a 
 | `<lesson-right>` | Text inside this tag takes up the right side of a slide (you'll need the closing tag too) | This app |
 | `<lesson-float>` | Text inside this tag is placed in a centered, floating box with a shadow (you'll need the closing tag too) | This app |
 | `<passage>` | Text inside this tag appears in a serif font and is scrollable via the up and down arrow keys (you'll need the closing tag too) | This app |
+| `{f}` | Animation: place this on any line to make it "fade" into view as you press the arrow key | Reveal |
 
 Markdown text can do other things, too.  Look up the [standard conventions for Markdown](https://www.markdownguide.org/basic-syntax/) to learn more about how to make bulleted or numbered lists, and tables, and try them out.
 
 Markdown also allows you to use regular HTML tags like `<div>`, `<span>`, `<p>`, and `<img>`.
 
-If you add `class="fragment"` to any tag, Reveal.js will delay showing that part until you press the right arrow key.  You can use this for emphasis as you speak through your slides.
+If you add `class="fragment"` to any tag, Reveal.js will delay showing that part until you press the right arrow key.  You can use this for emphasis as you speak through your slides.  The shortcut `{f}` can also be used.  The sample content demonstrates several other animation shortcuts as well.
 
 Reveal.js also includes other features for style and animation in Markdown files.  Check out the [documentation](https://revealjs.com/markdown/#external-markdown) when you have a chance.
 
