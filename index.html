@@ -31,13 +31,18 @@
     <script src="dist/reveal.js"></script>
     <script src="dist/plugin/notes.js"></script>
     <script src="dist/plugin/markdown.js"></script>
-    <script src="scripts/simplifier.js"></script>
-    <script src="scripts/verse-formatter.js"></script>
-    <script src="scripts/perform-scroll.js"></script>
-    <script src="scripts/scroll-broadcaster.js"></script>
+    <script type="module" src="scripts/simplifier.js"></script>
+    <script type="module" src="scripts/verse-formatter.js"></script>
+    <script type="module" src="scripts/perform-scroll.js"></script>
+    <script type="module" src="scripts/scroll-broadcaster.js"></script>
     <script src="scripts/move-pointer.js"></script>
     <script src="scripts/pointer-broadcaster.js"></script>
-    <script>
+    <script type="module">
+      import Simplifier from "./scripts/simplifier.js";
+      import VerseFormatter from "./scripts/verse-formatter.js";
+      import { performScroll } from "./scripts/perform-scroll.js";
+      import { establishScrollChannel, broadcastScroll } from "./scripts/scroll-broadcaster.js";
+
       Reveal.initialize({
         width: 1920,
         height: 1080,

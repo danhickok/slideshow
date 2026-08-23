@@ -14,3 +14,6 @@ const VerseFormatter = {
     deck.layout();
   },
 };
+
+export default VerseFormatter;
+

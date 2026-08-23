@@ -60,3 +60,6 @@ const Simplifier = {
     deck.layout();
   },
 };
+
+export default Simplifier;
+

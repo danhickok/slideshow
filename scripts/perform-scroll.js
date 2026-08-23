@@ -1,7 +1,7 @@
 // A routine to scroll the contents of the <div> element with .scrollable class
 // based on given direction
 
-function performScroll(direction) {
+export function performScroll(direction) {
   const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
   if (isUpcomingSlide) return;
 

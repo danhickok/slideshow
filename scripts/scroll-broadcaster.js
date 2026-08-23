@@ -1,7 +1,9 @@
 // A set of routines to set up a BroadcastChannel object for coordinating
 // scrolling between main and speaker views
 
-function establishScrollChannel() {
+import { performScroll } from "./perform-scroll.js";
+
+export function establishScrollChannel() {
   if (!window.scrollChannel) {
     window.scrollChannel = new BroadcastChannel("passage-scroller");
 
@@ -14,7 +16,7 @@ function establishScrollChannel() {
   }
 }
 
-function broadcastScroll(direction) {
+export function broadcastScroll(direction) {
   establishScrollChannel();
   window.scrollChannel.postMessage(direction);
 }
