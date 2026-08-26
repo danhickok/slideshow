@@ -9,6 +9,7 @@ const VerseFormatter = {
       if (passage) {
         let content = passage.innerHTML;
         passage.innerHTML = content.replace(/\[([0-9]+)\]/g, "<verse>$1</verse>");
+        //TODO: need to curl quotes in <passage>
       }
     }
     deck.layout();

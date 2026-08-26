@@ -1,6 +1,8 @@
 // A routine to scroll the contents of the <div> element with .scrollable class
 // based on given direction
 
+import Reveal from "../dist/reveal.mjs";
+
 export function performScroll(direction) {
   const isUpcomingSlide = window.frameElement?.parentElement?.id == "upcoming-slide";
   if (isUpcomingSlide) return;
@@ -29,4 +31,25 @@ export function performScroll(direction) {
       }
       break;
   }
+}
+
+// routines to set up a BroadcastChannel object for coordinating
+// scrolling between main and speaker views
+
+export function establishScrollChannel() {
+  if (!window.scrollChannel) {
+    window.scrollChannel = new BroadcastChannel("passage-scroller");
+
+    window.scrollChannel.onmessage = (ev) => {
+      const direction = ev.data;
+      if (direction) {
+        performScroll(direction);
+      }
+    };
+  }
+}
+
+export function broadcastScroll(direction) {
+  establishScrollChannel();
+  window.scrollChannel.postMessage(direction);
 }

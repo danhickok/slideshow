@@ -27,21 +27,16 @@
         </section>
       </div>
     </div>
-
-    <script src="dist/reveal.js"></script>
-    <script src="dist/plugin/notes.js"></script>
-    <script src="dist/plugin/markdown.js"></script>
-    <script type="module" src="scripts/simplifier.js"></script>
-    <script type="module" src="scripts/verse-formatter.js"></script>
-    <script type="module" src="scripts/perform-scroll.js"></script>
-    <script type="module" src="scripts/scroll-broadcaster.js"></script>
-    <script src="scripts/move-pointer.js"></script>
-    <script src="scripts/pointer-broadcaster.js"></script>
     <script type="module">
-      import Simplifier from "./scripts/simplifier.js";
-      import VerseFormatter from "./scripts/verse-formatter.js";
-      import { performScroll } from "./scripts/perform-scroll.js";
-      import { establishScrollChannel, broadcastScroll } from "./scripts/scroll-broadcaster.js";
+      import Reveal from "./dist/reveal.mjs";
+      import Notes from "./dist/plugin/notes.mjs"
+      import Markdown from "./dist/plugin/markdown.mjs"
+      
+      import Simplifier from "./scripts/simplifier.mjs";
+      import VerseFormatter from "./scripts/verse-formatter.mjs";
+
+      import { establishScrollChannel, performScroll, broadcastScroll } from "./scripts/scroller.mjs";
+      import { establishPointerChannel, togglePointer } from "./scripts/pointer.mjs";
 
       Reveal.initialize({
         width: 1920,
@@ -50,7 +45,7 @@
         minScale: 0.2,
         maxScale: 4.0,
         hash: true,
-        plugins: [RevealMarkdown, Simplifier, VerseFormatter, RevealNotes],
+        plugins: [Markdown, Simplifier, VerseFormatter, Notes],
         transition: "fade",
         transitionSpeed: "fast",
         slideNumber: true,

@@ -1,9 +1,11 @@
 // Routines to create, show or hide, and move pointer
 
+import Reveal from "../dist/reveal.mjs";
+
 // This keeps pointer from leaving right or bottom edge of window
 const POINTER_EDGE = 10;
 
-function establishLessonPointer() {
+export function establishLessonPointer() {
   if (!window.lessonPointer) {
     window.lessonPointer = {
       pointerVisible: false,
@@ -45,7 +47,7 @@ function updatePointer(x, y) {
   );
 }
 
-function togglePointer() {
+export function togglePointer() {
   window.lessonPointer.pointerVisible = !window.lessonPointer.pointerVisible;
 
   showPointer();
@@ -74,3 +76,50 @@ function movePointer() {
     pointerElement.style.left = `${window.lessonPointer.currentX}px`;
   }
 }
+
+// routines to set up a BroadcastChannel object for coordinate moving a
+// pointer around on the slide in both main and speaker views
+
+export function establishPointerChannel() {
+  establishLessonPointer();
+
+  if (!window.pointerChannel) {
+    window.pointerChannel = new BroadcastChannel("pointer");
+
+    window.pointerChannel.onmessage = (ev) => {
+      const slideRect = Reveal.getCurrentSlide().getBoundingClientRect();
+
+      window.lessonPointer.pointerVisible = ev.data.visible;
+
+      const sourceSlideX = ev.data.slideX;
+      const sourceSlideY = ev.data.slideY;
+      const sourceSlideWidth = ev.data.slideWidth;
+      const sourceSlideHeight = ev.data.slideHeight;
+
+      const factorX = slideRect.width / sourceSlideWidth;
+      const factorY = slideRect.height / sourceSlideHeight;
+
+      const destX = Math.floor((ev.data.x - sourceSlideX) * factorX) + slideRect.x;
+      const destY = Math.floor((ev.data.y - sourceSlideY) * factorY) + slideRect.y;
+
+      updatePointer(destX, destY);
+      showPointer();
+      movePointer();
+    };
+  }
+}
+
+export function broadcastPointer() {
+  const slideRect = Reveal.getCurrentSlide().getBoundingClientRect();
+
+  window.pointerChannel.postMessage({
+    visible: window.lessonPointer.pointerVisible,
+    x: window.lessonPointer.currentX,
+    y: window.lessonPointer.currentY,
+    slideX: slideRect.x,
+    slideY: slideRect.y,
+    slideWidth: slideRect.width,
+    slideHeight: slideRect.height,
+  });
+}
+
