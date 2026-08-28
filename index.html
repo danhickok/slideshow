@@ -29,13 +29,17 @@
     </div>
     <script type="module">
       import Reveal from "./dist/reveal.mjs";
-      import Notes from "./dist/plugin/notes.mjs"
-      import Markdown from "./dist/plugin/markdown.mjs"
-      
+      import Notes from "./dist/plugin/notes.mjs";
+      import Markdown from "./dist/plugin/markdown.mjs";
+
       import Simplifier from "./scripts/simplifier.mjs";
       import VerseFormatter from "./scripts/verse-formatter.mjs";
 
-      import { establishScrollChannel, performScroll, broadcastScroll } from "./scripts/scroller.mjs";
+      import {
+        establishScrollChannel,
+        performScroll,
+        broadcastScroll,
+      } from "./scripts/scroller.mjs";
       import { establishPointerChannel, togglePointer } from "./scripts/pointer.mjs";
 
       Reveal.initialize({

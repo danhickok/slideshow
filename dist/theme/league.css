@@ -42,6 +42,14 @@
   --l-verse-font: Lato, sans-serif;
   --l-verse-color: #6bc2ed;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #1c1e20;
+  background-image: url("../../images/league.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -293,11 +301,4 @@ section.has-light-background h4,
 section.has-light-background h5,
 section.has-light-background h6 {
   color: #222;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: #1c1e20;
-  background-image: url("../../images/league.jpg");
-  background-size: cover;
 }

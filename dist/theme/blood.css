@@ -35,6 +35,14 @@
   --l-verse-font: Ubuntu, sans-serif;
   --l-verse-color: #d0c332;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #2b2b2b;
+  background-image: url("../../images/blood.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -313,11 +321,4 @@ section.has-light-background h4 {
 }
 .reveal small code {
   vertical-align: baseline;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: #2b2b2b;
-  background-image: url("../../images/blood.jpg");
-  background-size: cover;
 }

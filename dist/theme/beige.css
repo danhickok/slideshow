@@ -45,6 +45,14 @@
   --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-verse-color: #918031;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: white;
+  background-image: url("../../images/beige.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -296,11 +304,4 @@ section.has-dark-background h4,
 section.has-dark-background h5,
 section.has-dark-background h6 {
   color: #fff;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: white;
-  background-image: url("../../images/beige.jpg");
-  background-size: cover;
 }
