@@ -135,6 +135,22 @@ table th {
   padding-left: 40px;
 }
 
+/* Full width text */
+
+wide {
+  display: inline;
+  font-weight: bold;
+}
+
+/* For convenience, centering and right-justifying a block of text */
+centered {
+  text-align: center;
+}
+
+right-justified {
+  text-align: right;
+}
+
 /* For passages and verses */
 
 .passage {

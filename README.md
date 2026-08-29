@@ -30,10 +30,10 @@ The original version of "content.md" has examples you can follow.  But here's a 
 | `<lesson-welcome>` | Put this tag at the top of your first slide with a welcome message &ndash; it's centered text | This app |
 | `<lesson-title>` | Put this tag at the top of your second slide &ndash; it's centered and fades into view | This app |
 | `<lesson-section>` | Put this tag at the top of each slide that begins a new section &ndash; it's centered and horizontally slides into view | This app |
-| `<lesson-left>` | Text inside this tag takes up the left side of a slide (you'll need the closing tag too) | This app |
-| `<lesson-right>` | Text inside this tag takes up the right side of a slide (you'll need the closing tag too) | This app |
-| `<lesson-float>` | Text inside this tag is placed in a centered, floating box with a shadow (you'll need the closing tag too) | This app |
-| `<passage>` | Text inside this tag appears in a serif font and is scrollable via the up and down arrow keys (you'll need the closing tag too) | This app |
+| `<lesson-left>` | Text inside this tag takes up the left side of a slide | This app |
+| `<lesson-right>` | Text inside this tag takes up the right side of a slide | This app |
+| `<lesson-float>` | Text inside this tag is placed in a centered, floating box with a shadow | This app |
+| `<passage>` | Text inside this tag appears in a serif font and is scrollable via the up and down arrow keys | This app |
 | `{f}` | Animation: place this on any line to make it "fade" into view as you press the arrow key | Reveal |
 
 Markdown text can do other things, too.  Look up the [standard conventions for Markdown](https://www.markdownguide.org/basic-syntax/) to learn more about how to make bulleted or numbered lists, and tables, and try them out.
