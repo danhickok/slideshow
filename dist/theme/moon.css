@@ -34,6 +34,12 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
+  --l-lesson-welcome-background-color: #002b36;
+  --l-lesson-welcome-background-image: url("../../images/moon-welcome.png");
+  --l-lesson-title-background-color: #002b36;
+  --l-lesson-title-background-image: url("../../images/moon-title.png");
+  --l-lesson-section-background-color: #002b36;
+  --l-lesson-section-background-image: url("../../images/moon-section.png");
   --l-passage-font: Lato, sans-serif;
   --l-passage-color: #fbfadb;
   --l-passage-background-color: #0b1d23;
@@ -42,6 +48,14 @@
   --l-verse-font: Lato, sans-serif;
   --l-verse-color: #58b1ca;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #002b36;
+  background-image: url("../../images/moon.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -293,11 +307,4 @@ section.has-light-background h4,
 section.has-light-background h5,
 section.has-light-background h6 {
   color: #222;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: #002b36;
-  background-image: url("../../images/moon.jpg");
-  background-size: cover;
 }

@@ -28,6 +28,12 @@
   --r-selection-color: #111;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
+  --l-lesson-welcome-background-color: #111;
+  --l-lesson-welcome-background-image: url("../../images/night-welcome.png");
+  --l-lesson-title-background-color: #111;
+  --l-lesson-title-background-image: url("../../images/night-title.png");
+  --l-lesson-section-background-color: #111;
+  --l-lesson-section-background-image: url("../../images/night-section.png");
   --l-passage-font: "Open Sans", sans-serif;
   --l-passage-color: #eec;
   --l-passage-background-color: #000;
@@ -36,6 +42,14 @@
   --l-verse-font: "Open Sans", sans-serif;
   --l-verse-color: #e7ad52;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: #111;
+  background-image: url("../../images/night.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -287,11 +301,4 @@ section.has-light-background h4,
 section.has-light-background h5,
 section.has-light-background h6 {
   color: #222;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: #111;
-  background-image: url("../../images/night.jpg");
-  background-size: cover;
 }

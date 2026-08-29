@@ -5,7 +5,12 @@ const Simplifier = {
   init: (deck) => {
     const slides = deck.getSlides();
     for (let i = 0; i < slides.length; ++i) {
-      // beginning-of-section slides get a slide transition and different background
+      if (slides[i].querySelector("lesson-welcome")) {
+        slides[i].setAttribute("data-state", "lesson-welcome-background");
+      }
+      if (slides[i].querySelector("lesson-title")) {
+        slides[i].setAttribute("data-state", "lesson-title-background");
+      }
       if (slides[i].querySelector("lesson-section")) {
         slides[i].setAttribute("data-transition", "slide");
         slides[i].setAttribute("data-state", "lesson-section-background");
@@ -39,9 +44,9 @@ const Simplifier = {
         hcb: ["highlight-current-blue"],
         b: ["custom", "blur"],
       };
-      const defragment = (node) => {
+      const enfragment = (node) => {
         for (let ch of node.childNodes) {
-          defragment(ch);
+          enfragment(ch);
           if (ch.nodeType == Node.TEXT_NODE) {
             for (let [key, val] of Object.entries(map)) {
               if (ch.nodeValue.includes(`{${key}}`)) {
@@ -55,7 +60,7 @@ const Simplifier = {
           }
         }
       };
-      defragment(slides[i]);
+      enfragment(slides[i]);
     }
     deck.layout();
   },

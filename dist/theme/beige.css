@@ -37,6 +37,15 @@
   --r-selection-color: #333;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
+  --l-lesson-welcome-background-color: #f7f3de;
+  --l-lesson-welcome-background-image: url("../../images/beige-welcome.png"),
+    radial-gradient(#fff, #f7f2d3);
+  --l-lesson-title-background-color: #f7f3de;
+  --l-lesson-title-background-image: url("../../images/beige-title.png"),
+    radial-gradient(#fff, #f7f2d3);
+  --l-lesson-section-background-color: #f7f3de;
+  --l-lesson-section-background-image: url("../../images/beige-section.png"),
+    radial-gradient(#fff, #f7f2d3);
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #000;
   --l-passage-background-color: #f3eabd;
@@ -45,6 +54,14 @@
   --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-verse-color: #918031;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: white;
+  background-image: url("../../images/beige.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -296,11 +313,4 @@ section.has-dark-background h4,
 section.has-dark-background h5,
 section.has-dark-background h6 {
   color: #fff;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: white;
-  background-image: url("../../images/beige.jpg");
-  background-size: cover;
 }

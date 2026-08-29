@@ -28,6 +28,12 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 0, 0, 0;
   --r-overlay-element-fg-color: 240, 240, 240;
+  --l-lesson-welcome-background-color: #fff;
+  --l-lesson-welcome-background-image: url("../../images/simple-welcome.png");
+  --l-lesson-title-background-color: #fff;
+  --l-lesson-title-background-image: url("../../images/simple-title.png");
+  --l-lesson-section-background-color: #fff;
+  --l-lesson-section-background-image: url("../../images/simple-section.png");
   --l-passage-font: "Lato", sans-serif;
   --l-passage-color: #222;
   --l-passage-background-color: #ebf0f3;
@@ -36,6 +42,14 @@
   --l-verse-font: "Lato", sans-serif;
   --l-verse-color: #77c0f0;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: white;
+  background-image: url("../../images/simple.jpg");
+  background-size: cover;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -287,11 +301,4 @@ section.has-dark-background h4,
 section.has-dark-background h5,
 section.has-dark-background h6 {
   color: #fff;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: white;
-  background-image: url("../../images/simple.jpg");
-  background-size: cover;
 }

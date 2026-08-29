@@ -1,2 +1,2 @@
 @echo off
-py -m http.server
+py serve.py

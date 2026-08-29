@@ -54,6 +54,9 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
+  --l-lesson-welcome-background-color: #000;
+  --l-lesson-title-background-color: #000;
+  --l-lesson-section-background-color: #000;
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #fff;
   --l-passage-background-color: #333;
@@ -62,6 +65,12 @@
   --l-verse-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-verse-color: #aaa;
 }
+
+/* Custom for lessons */
+.lesson-section-background {
+  background-color: black;
+}
+
 .reveal-viewport {
   background: var(--r-background);
   background-color: var(--r-background-color);
@@ -313,9 +322,4 @@ section.has-light-background h4,
 section.has-light-background h5,
 section.has-light-background h6 {
   color: #000;
-}
-
-/* Custom for lessons */
-.lesson-section-background {
-  background-color: black;
 }
