@@ -54,12 +54,12 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-lesson-welcome-background-color: #fff;
-  --l-lesson-welcome-background-image: url("../../images/blue-abstract-on-white.jpg");
-  --l-lesson-title-background-color: #fff;
-  --l-lesson-title-background-image: url("../../images/blue-abstract-on-white.jpg");
-  --l-lesson-section-background-color: #fff;
-  --l-lesson-section-background-image: url("../../images/blue-abstract-on-white.jpg");
+  --l-lesson-welcome-background-color: #191919;
+  --l-lesson-welcome-background-image: url("../../images/black-welcome.png");
+  --l-lesson-title-background-color: #191919;
+  --l-lesson-title-background-image: url("../../images/black-title.png");
+  --l-lesson-section-background-color: #191919;
+  --l-lesson-section-background-image: url("../../images/black-section.png");
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #fff;
   --l-passage-background-color: #3a3a3a;

@@ -34,12 +34,15 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-lesson-welcome-background-color: #fff;
-  --l-lesson-welcome-background-image: url("../../images/blue-abstract-on-white.jpg");
-  --l-lesson-title-background-color: #fff;
-  --l-lesson-title-background-image: url("../../images/blue-abstract-on-white.jpg");
-  --l-lesson-section-background-color: #fff;
-  --l-lesson-section-background-image: url("../../images/blue-abstract-on-white.jpg");
+  --l-lesson-welcome-background-color: #1c1e20;
+  --l-lesson-welcome-background-image: url("../../images/league-welcome.png"),
+    radial-gradient(#555a5f, #1c1e20);
+  --l-lesson-title-background-color: #1c1e20;
+  --l-lesson-title-background-image: url("../../images/league-title.png"),
+    radial-gradient(#555a5f, #1c1e20);
+  --l-lesson-section-background-color: #1c1e20;
+  --l-lesson-section-background-image: url("../../images/league-section.png"),
+    radial-gradient(#555a5f, #1c1e20);
   --l-passage-font: Lato, sans-serif;
   --l-passage-color: #eee;
   --l-passage-background-color: #1c1e20;
