@@ -21,6 +21,9 @@
 lesson-welcome {
   display: block;
   text-align: center;
+}
+
+.lesson-welcome-background {
   background-color: var(--l-lesson-welcome-background-color);
   background-image: var(--l-lesson-welcome-background-image);
   background-size: cover;
@@ -29,6 +32,9 @@ lesson-welcome {
 lesson-title {
   display: block;
   text-align: center;
+}
+
+.lesson-title-background {
   background-color: var(--l-lesson-title-background-color);
   background-image: var(--l-lesson-title-background-image);
   background-size: cover;
@@ -37,6 +43,9 @@ lesson-title {
 lesson-section {
   display: block;
   text-align: center;
+}
+
+.lesson-section-background {
   background-color: var(--l-lesson-section-background-color);
   background-image: var(--l-lesson-section-background-image);
   background-size: cover;
