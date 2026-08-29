@@ -48,7 +48,7 @@ Reveal.js also includes other features for style and animation in Markdown files
 
 The slideshow requires a web server.  If you've got one on your machine, great! All you need to do is set it up on your server and open your browser to that site.
 
-But if you don't have a web server (or you don't want to add this app to an existing server), you can use a one-line Python script to make one.  I've included a batch file "serve.bat" with that command.  Execute that batch file in the folder where this slideshow app exists, and then open your browser to http://localhost:8000 and you're ready to go.
+But if you don't have a web server (or you don't want to add this app to an existing server), you can use a simple Python script to make one.  I've included a batch file "serve.bat" that calls a Python script "serve.py".  Execute that batch file in the folder where this slideshow app exists, and then open your browser to http://localhost:8000 and you're ready to go.
 
 ### While displaying the slides
 

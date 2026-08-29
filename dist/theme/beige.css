@@ -37,6 +37,12 @@
   --r-selection-color: #333;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
+  --l-lesson-welcome-background-color: #fff;
+  --l-lesson-welcome-background-image: url("../../images/blue-abstract-on-white.jpg");
+  --l-lesson-title-background-color: #fff;
+  --l-lesson-title-background-image: url("../../images/blue-abstract-on-white.jpg");
+  --l-lesson-section-background-color: #fff;
+  --l-lesson-section-background-image: url("../../images/blue-abstract-on-white.jpg");
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #000;
   --l-passage-background-color: #f3eabd;
