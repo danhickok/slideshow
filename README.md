@@ -30,6 +30,7 @@ The original version of "content.md" has examples you can follow.  But here's a 
 | `<lesson-welcome>` | Put this tag at the top of your first slide with a welcome message &ndash; it's centered text | This app |
 | `<lesson-title>` | Put this tag at the top of your second slide &ndash; it's centered and fades into view | This app |
 | `<lesson-section>` | Put this tag at the top of each slide that begins a new section &ndash; it's centered and horizontally slides into view | This app |
+| `<lesson-image>` | Use this on a slide by itself, with a "src" attribute (like an `<img>` element) | This app |
 | `<lesson-left>` | Text inside this tag takes up the left side of a slide | This app |
 | `<lesson-right>` | Text inside this tag takes up the right side of a slide | This app |
 | `<lesson-float>` | Text inside this tag is placed in a centered, floating box with a shadow | This app |

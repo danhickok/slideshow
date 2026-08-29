@@ -60,6 +60,15 @@ There are special tags you can use for different kinds of slides:
 | `<lesson-welcome>` | Centers contents; (default) fade transition |
 | `<lesson-title>` | Centers contents; (default) fade transition |
 | `<lesson-section>` | Centers contents; left-to-right transition |
+| `<lesson-image>` | Full-screen image (e.g., for maps) |
+
+---
+
+<lesson-image src="../../images/ancient-map.jpg" />
+
+===
+
+Typically you'd embed text or captions directly into your image.
 
 ---
 

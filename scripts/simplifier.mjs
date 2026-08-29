@@ -21,6 +21,19 @@ const Simplifier = {
         slides[i].setAttribute("data-state", "lesson-section-background");
       }
 
+      // image-only slides
+      const lessonImage = slides[i].querySelector("lesson-image")
+      if (lessonImage) {
+        const imageFiller = document.createElement("div");
+        imageFiller.style.width = "100vw";
+        imageFiller.style.height = "100vh";
+        lessonImage.appendChild(imageFiller);
+
+        slides[i].setAttribute("data-background-image", lessonImage.getAttribute("src"));
+        slides[i].setAttribute("data-background-size", "contain");
+        slides[i].setAttribute("data-background-color", "#000");
+      }
+
       // "wide" elements fit across the entire slide
       const wides = slides[i].querySelectorAll("wide");
       for (let wide of wides) {

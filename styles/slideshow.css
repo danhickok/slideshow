@@ -123,18 +123,6 @@ table th {
   padding: 0.3em;
 }
 
-.lesson-image-container {
-  height: 950px;
-  width: 1790px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 4px solid var(--r-main-color);
-}
-
-.lesson-image {
-  padding-left: 40px;
-}
-
 /* Full width text */
 
 wide {
