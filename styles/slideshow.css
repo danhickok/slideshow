@@ -123,16 +123,20 @@ table th {
   padding: 0.3em;
 }
 
-.lesson-image-container {
-  height: 950px;
-  width: 1790px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 4px solid var(--r-main-color);
+/* Full width text */
+
+wide {
+  display: inline;
+  font-weight: bold;
 }
 
-.lesson-image {
-  padding-left: 40px;
+/* For convenience, centering and right-justifying a block of text */
+centered {
+  text-align: center;
+}
+
+right-justified {
+  text-align: right;
 }
 
 /* For passages and verses */

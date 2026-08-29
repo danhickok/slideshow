@@ -5,15 +5,39 @@ const Simplifier = {
   init: (deck) => {
     const slides = deck.getSlides();
     for (let i = 0; i < slides.length; ++i) {
+      // welcome slide
       if (slides[i].querySelector("lesson-welcome")) {
         slides[i].setAttribute("data-state", "lesson-welcome-background");
       }
+
+      // title slide
       if (slides[i].querySelector("lesson-title")) {
         slides[i].setAttribute("data-state", "lesson-title-background");
       }
+
+      // section slides
       if (slides[i].querySelector("lesson-section")) {
         slides[i].setAttribute("data-transition", "slide");
         slides[i].setAttribute("data-state", "lesson-section-background");
+      }
+
+      // image-only slides
+      const lessonImage = slides[i].querySelector("lesson-image")
+      if (lessonImage) {
+        const imageFiller = document.createElement("div");
+        imageFiller.style.width = "100vw";
+        imageFiller.style.height = "100vh";
+        lessonImage.appendChild(imageFiller);
+
+        slides[i].setAttribute("data-background-image", lessonImage.getAttribute("src"));
+        slides[i].setAttribute("data-background-size", "contain");
+        slides[i].setAttribute("data-background-color", "#000");
+      }
+
+      // "wide" elements fit across the entire slide
+      const wides = slides[i].querySelectorAll("wide");
+      for (let wide of wides) {
+        wide.classList.add("r-fit-text");
       }
 
       // passage elements are scrollable and have a unique style

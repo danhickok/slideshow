@@ -6,6 +6,8 @@
 
 #### Lesson Date Goes Here
 
+</lesson-welcome>
+
 ---
 
 <lesson-title>
@@ -14,11 +16,15 @@
 
 ### Full Passage Description Goes Here
 
+</lesson-title>
+
 ---
 
 <lesson-section>
 
 # Introduction
+
+</lesson-section>
 
 ---
 
@@ -54,6 +60,33 @@ There are special tags you can use for different kinds of slides:
 | `<lesson-welcome>` | Centers contents; (default) fade transition |
 | `<lesson-title>` | Centers contents; (default) fade transition |
 | `<lesson-section>` | Centers contents; left-to-right transition |
+| `<lesson-image>` | Full-screen image (e.g., for maps) |
+
+---
+
+<lesson-image src="../../images/ancient-map.jpg" />
+
+===
+
+Typically you'd embed text or captions directly into your image.
+
+---
+
+For convenience,
+
+<centered>
+
+you can use `<centered>`\
+to center your text,
+
+</centered>
+
+<right-justified>
+
+or `<right-justified>`\
+to right-justify text.
+
+</right-justified>
 
 ---
 
@@ -66,12 +99,13 @@ and `<lesson-right>` tags.  The text in each block wraps around.
 
 <lesson-right>
 
-{f}The two blocks are designed to take up the entire slide by themselves.
+The two blocks are designed to take up the entire slide by themselves.
 
-{f}So don't add any heading or footing to the slide.
+So don't add any heading or footing to the slide.
 
 </lesson-right>
 
+<!-- Notice the use of Reveal's "fragment" class here -->
 <lesson-float class="fragment">
 
 Here's some text floating in a box.  It's in a `<lesson-float>` tag.
@@ -83,9 +117,65 @@ sentences.  The more text you add, the taller the box becomes.
 
 ---
 
-## Animation
+<centered>
 
-{f} You can delay text (or anything) from appearing right away by including
+If you need to get your audience's attention,
+
+</centered>
+
+<wide>SAY IT LOUDLY</wide>
+
+<centered>
+
+by putting the text in a `<wide>` tag.
+
+</centered>
+
+---
+
+<lesson-section>
+
+# Bible Passages
+
+### The Star of the Show
+
+</lesson-section>
+
+---
+
+#### _Selected Passage Name Goes Here_
+
+<passage>
+
+[1] This slideshow application can be used for anything, but its primary purpose
+is for giving Bible Study lessons.  When quoting scripture, then, you would put
+it in a `<passage>` tag.  It's a specially designed tag that stands out
+separately from the rest of your presentation.
+
+[2] Passages appear in a scrollable box. You can page up and down using the Up
+Arrow and Down Arrow keys on your keyboard. [3] The `<passage>` section is
+designed to be the only thing on the page besides the passage name.
+
+[3] The verse numbers in your markdown are in square brackets, but they're
+translated to a different font and style and the square brackets are removed
+when they appear in the slide.
+
+[4] So the whole idea is that this will give you a useful area for reading the
+passage, [6] without having to navigate to another slide.
+
+</passage>
+
+---
+
+<lesson-section>
+
+# Animation
+
+</lesson-section>
+
+---
+
+You can delay text (or anything) from appearing right away by including
 {&ZeroWidthSpace;f&ZeroWidthSpace;} anywhere on the line to fade in when it
 appears.  For example,
 
@@ -97,13 +187,13 @@ appears.  For example,
 
 <lesson-left>
 
-<center>
+<centered>
 
 \
 \
 It even works on images:
 
-</center>
+</centered>
 
 </lesson-left>
 
@@ -140,7 +230,7 @@ Some work better on entire lines only:
 
 ---
 
-<center>
+<centered>
 
 {g} Use {&ZeroWidthSpace;g&ZeroWidthSpace;} to grow text.
 
@@ -148,8 +238,7 @@ Some work better on entire lines only:
 
 {b} Use {&ZeroWidthSpace;b&ZeroWidthSpace;} to make text appear from a blur.
 
-
-</center>
+</centered>
 
 ---
 
@@ -169,39 +258,14 @@ Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue the
 
 <lesson-section>
 
-# Lesson Section Title
+# Content Sizing
 
-### Selected Passage Goes Here
-
----
-
-#### _Selected Passage_
-
-<passage>
-
-[1] This slideshow application can be used for anything, but its primary
-purpose is for giving Bible Study lessons.  When quoting scripture, then,
-you would put it in a `<passage>` tag.
-
-[2] This would be the text of the passage. The passage is designed to be tall
-enough to be the only thing on the page besides the passage name.
-
-[3] The verse numbers in your markdown are in square brackets, but they're
-translated to a different font and style and the square brackets are removed
-when they appear in the slide.
-
-[4] Passages appear in a scrollable box. You can page up and down using the Up
-Arrow and Down Arrow keys on your keyboard. [5] So the whole idea is that this
-will give you a useful area for reading the passage, [6] without having to
-navigate to another slide.
-
-</passage>
+### Use this section to test the limits
 
 ---
 
-It will take some practice to get the size of the slides right.  The text
-appears centered vertically but left-justified (unless using one of the
-special slide tags).  Here's some practice text:
+It will take some practice to get the size of the slides right.  Font choices
+matter!  Here's some practice text:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -237,4 +301,14 @@ repellat.
 
 ---
 
-_Etc._
+<lesson-section>
+
+# Wrapping Up
+
+</lesson-section>
+
+---
+
+The last slide (the one after this one) is always an empty slide with a plain
+black background.  That indicates to you and your audience that the presentation
+is finished.
