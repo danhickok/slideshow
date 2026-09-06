@@ -42,6 +42,8 @@
       } from "./scripts/scroller.mjs";
       import { establishPointerChannel, togglePointer } from "./scripts/pointer.mjs";
 
+      import { requestWakeLock } from "./scripts/wake-lock.mjs";
+
       Reveal.initialize({
         width: 1920,
         height: 1080,
@@ -76,6 +78,7 @@
       }).then(() => {
         establishScrollChannel();
         establishPointerChannel();
+        requestWakeLock();
       });
 
       // called when each slide appears
