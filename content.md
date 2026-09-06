@@ -28,8 +28,8 @@
 
 ---
 
-Here's where you would put introductory comments.  Notice that the default
-orientation of the slide is left-justified.  "Quote" characters are
+Here's where you would put introductory comments. Notice that the default
+orientation of the slide is left-justified. "Quote" characters are
 automatically curled for you, and you can use a double-hyphen (--) for an n-dash
 or a triple-hyphen (---) for an m-dash.
 
@@ -37,7 +37,7 @@ or a triple-hyphen (---) for an m-dash.
 
 Following standard markdown styling, **bold text** is surrounded by
 double-asterisks (\*\*) and _italicized text_ is surrounded by either
-underscores (_) or a single asterisk (*).  Other markdown styles should work,
+underscores (\_) or a single asterisk (\*). Other markdown styles should work,
 too.
 
 Slides themselves are separated by three hyphens all by themselves with an empty
@@ -48,19 +48,20 @@ line above and below them.
 Use a triple-equals sign to add notes for the current slide.
 
 Notes are supposed to show up only when you press the "S" key (for "Speaker"),
-which opens a separate window with the speaker view.  Only the speaker view
+which opens a separate window with the speaker view. Only the speaker view
 shows the notes.
 
 ---
 
 There are special tags you can use for different kinds of slides:
 
-| Tag | Effects |
-| --- | ----- |
+| Tag                | Effects                                     |
+| ------------------ | ------------------------------------------- |
 | `<lesson-welcome>` | Centers contents; (default) fade transition |
-| `<lesson-title>` | Centers contents; (default) fade transition |
-| `<lesson-section>` | Centers contents; left-to-right transition |
-| `<lesson-image>` | Full-screen image (e.g., for maps) |
+| `<lesson-title>`   | Centers contents; (default) fade transition |
+| `<lesson-section>` | Centers contents; left-to-right transition  |
+| `<lesson-image>`   | Full-screen image (e.g., for maps)          |
+| `<lesson-animate>` | Auto-animation (explained later)            |
 
 ---
 
@@ -68,11 +69,21 @@ There are special tags you can use for different kinds of slides:
 
 ===
 
-Typically you'd embed text or captions directly into your image.
+The `<lesson-image>` tag is meant to be the only thing in the slide. If you need
+any headers or captions, typically you'd embed text directly into your image.
+
+Images work best when they're sized to fit the target screen size of 1920 x 1080
+pixels.
+
+Note that you can press the "P" key to toggle the pointer on or off. This is a
+finger shape that can point anywhere on the image. The place the pointer points
+to in the speaker view should be the same place (within a few pixels) of where
+it's pointing to in the audience view.
 
 ---
 
-For convenience,
+Text is normally left-justified.\
+But for convenience,
 
 <centered>
 
@@ -93,7 +104,7 @@ to right-justify text.
 <lesson-left>
 
 You can divide the slide into two side-by-side pieces using the `<lesson-left>`
-and `<lesson-right>` tags.  The text in each block wraps around.
+and `<lesson-right>` tags. The text in each block wraps around.
 
 </lesson-left>
 
@@ -108,10 +119,10 @@ So don't add any heading or footing to the slide.
 <!-- Notice the use of Reveal's "fragment" class here -->
 <lesson-float class="fragment">
 
-Here's some text floating in a box.  It's in a `<lesson-float>` tag.
+Here's some text floating in a box. It's in a `<lesson-float>` tag.
 
 You'll notice that the text wraps around and allows it to expand for longer
-sentences.  The more text you add, the taller the box becomes.
+sentences. The more text you add, the taller the box becomes.
 
 </lesson-float>
 
@@ -148,20 +159,21 @@ by putting the text in a `<wide>` tag.
 <passage>
 
 [1] This slideshow application can be used for anything, but its primary purpose
-is for giving Bible Study lessons.  When quoting scripture, then, you would put
-it in a `<passage>` tag.  It's a specially designed tag that stands out
+is for giving Bible Study lessons. When quoting scripture, then, you would put
+it in a `<passage>` tag. It's a specially designed tag that stands out
 separately from the rest of your presentation.
 
-[2] Passages appear in a scrollable box. You can page up and down using the Up
-Arrow and Down Arrow keys on your keyboard. [3] The `<passage>` section is
-designed to be the only thing on the page besides the passage name.
+[2] Passages appear in a special "scrollable" `<div>` element. You can page up
+and down using the Up Arrow and Down Arrow keys on your keyboard. [3] The
+`<passage>` section is designed to be the only thing on the page besides the
+passage name.
 
 [3] The verse numbers in your markdown are in square brackets, but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
 [4] So the whole idea is that this will give you a useful area for reading the
-passage, [6] without having to navigate to another slide.
+passage, [5] without having to navigate to another slide.
 
 </passage>
 
@@ -177,11 +189,11 @@ passage, [6] without having to navigate to another slide.
 
 You can delay text (or anything) from appearing right away by including
 {&ZeroWidthSpace;f&ZeroWidthSpace;} anywhere on the line to fade in when it
-appears.  For example,
+appears. For example,
 
-* {f} Here's the first bullet point in a list
-* {f} Here's the second bullet point
-* {f} And here's the third bullet point
+- {f} Here's the first bullet point in a list
+- {f} Here's the second bullet point
+- {f} And here's the third bullet point
 
 ---
 
@@ -207,11 +219,11 @@ It even works on images:
 
 And there are variations to fading:
 
-* Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
-* Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
-* Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
-* Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-fade out text.</span>
-* Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
+- Use {&ZeroWidthSpace;fo&ZeroWidthSpace;} to <span>{fo} fade out text.</span>
+- Use {&ZeroWidthSpace;fio&ZeroWidthSpace;} to <span>{fio} fade in, then fade out text.</span>
+- Use {&ZeroWidthSpace;sfo&ZeroWidthSpace;} to <span>{sfo} semi-fade out text.</span>
+- Use {&ZeroWidthSpace;fis&ZeroWidthSpace;} to <span>{fis} fade in then semi-fade out text.</span>
+- Use {&ZeroWidthSpace;t&ZeroWidthSpace;} to <span>{t} strike through text.</span>
 
 {f} You can use these on whole lines, or part of lines by placing text inside a
 `<span>` tag.
@@ -256,6 +268,120 @@ Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue the
 
 ---
 
+<lesson-animate>
+
+<h4 data-id="header">Whole Slide Animation</h4>
+
+Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
+
+<div style="display: flex;">
+  <div
+    data-id="circle1"
+    style="background-color: #ff4102;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 20px;">
+    1
+  </div>
+  <div
+    data-id="circle2"
+    style="background-color: #ffe30f;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 20px;">
+    2
+  </div>
+  <div
+    data-id="circle3"
+    style="background-color: #00ff21;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 20px;">
+    3
+  </div>
+</div>
+
+</lesson-animate>
+
+---
+
+<lesson-animate>
+
+<h4 data-id="header">Whole Slide Animation</h4>
+
+<div style="display: grid; grid-template-columns: 250px auto">
+  
+  <div
+    data-id="circle1"
+    data-auto-animate-delay="0"
+    style="background-color: #ff4102;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 20px;">
+    1
+  </div>
+  
+  <div
+    data-auto-animate-delay="0.6"
+    style="display: grid;
+      place-items: center start;">
+    Put the contents of each adjacent slide in a &lt;lesson-animate&gt; tag.
+  </div>
+  
+  <div
+    data-id="circle2"
+    data-auto-animate-delay="0.1"
+    style="background-color: #ffe30f;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 80px 20px;">
+    2
+  </div>
+
+  <div
+    data-auto-animate-delay="0.9"
+    style="display: grid;
+      place-items: center start;">
+    Give each element that exists in both slides an ID (using the "data-id"
+    attribute) so that Reveal's display engine can match them up.
+  </div>
+
+  <div
+    data-id="circle3"
+    data-auto-animate-delay="0.2"
+    style="background-color: #00ff21;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 40px 20px;">
+    3
+  </div>
+
+  <div
+    data-auto-animate-delay="1.2"
+    style="display: grid;
+      place-items: center start;">
+    Add a "data-auto-animate-delay" attribute to each element in the second
+    slide to provide a fractional number of seconds to wait until it's displayed.
+  </div>
+
+</div>
+
+</lesson-animate>
+
+---
+
 <lesson-section>
 
 # Content Sizing
@@ -264,8 +390,8 @@ Use {&ZeroWidthSpace;hcb&ZeroWidthSpace;} to <span>{hcb} highlight text blue the
 
 ---
 
-It will take some practice to get the size of the slides right.  Font choices
-matter!  Here's some practice text:
+It will take some practice to get the size of the slides right. Font choices
+matter! Here's some practice text:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -310,5 +436,5 @@ repellat.
 ---
 
 The last slide (the one after this one) is always an empty slide with a plain
-black background.  That indicates to you and your audience that the presentation
+black background. That indicates to you and your audience that the presentation
 is finished.

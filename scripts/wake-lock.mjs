@@ -14,7 +14,6 @@ export function requestWakeLock() {
     .then((sentinel) => {
       wakeLockSentinel = sentinel;
       autoAcquire = true;
-      console.log("wait lock acquired");
     })
     .catch((err) => {
       console.error(`${err.name}: ${err.message}`);
@@ -30,7 +29,6 @@ export function releaseWakeLock() {
       .then(() => {
         autoAcquire = false;
         wakeLockSentinel = null;
-        console.log("wait lock released");
       })
       .catch((err) => {
         console.error(`${err.name}: ${err.message}`);

@@ -31,7 +31,6 @@ const Simplifier = {
         // slide images work best when they're sized to 1920x1080
         slides[i].setAttribute("data-background-image", lessonImage.getAttribute("src"));
         slides[i].setAttribute("data-background-size", "100%");
-        slides[i].setAttribute("data-background-color", "#000");
       }
 
       // auto-animate slides (see https://revealjs.com/auto-animate/)

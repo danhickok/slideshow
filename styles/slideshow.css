@@ -26,7 +26,9 @@ lesson-welcome {
 .lesson-welcome-background {
   background-color: var(--l-lesson-welcome-background-color);
   background-image: var(--l-lesson-welcome-background-image);
-  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 lesson-title {
@@ -37,7 +39,9 @@ lesson-title {
 .lesson-title-background {
   background-color: var(--l-lesson-title-background-color);
   background-image: var(--l-lesson-title-background-image);
-  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 lesson-section {
@@ -48,7 +52,9 @@ lesson-section {
 .lesson-section-background {
   background-color: var(--l-lesson-section-background-color);
   background-image: var(--l-lesson-section-background-image);
-  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 lesson-left {
