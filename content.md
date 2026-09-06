@@ -29,9 +29,9 @@
 ---
 
 Here's where you would put introductory comments. Notice that the default
-orientation of the slide is left-justified. "Quote" characters are
-automatically curled for you, and you can use a double-hyphen (--) for an n-dash
-or a triple-hyphen (---) for an m-dash.
+orientation of the slide is left-justified. "Quote" characters are automatically
+'curled' for you, and you can use a double-hyphen (--) for an n-dash or a
+triple-hyphen (---) for an m-dash.
 
 ---
 
@@ -168,12 +168,12 @@ and down using the Up Arrow and Down Arrow keys on your keyboard. [3] The
 `<passage>` section is designed to be the only thing on the page besides the
 passage name.
 
-[3] The verse numbers in your markdown are in square brackets, but they're
+[4] The verse numbers in your markdown are in 'square' brackets -- but they're
 translated to a different font and style and the square brackets are removed
 when they appear in the slide.
 
-[4] So the whole idea is that this will give you a useful area for reading the
-passage, [5] without having to navigate to another slide.
+[5] So the whole idea is that this will give you a useful area for reading the
+passage---[6] without having to navigate to another slide.
 
 </passage>
 
