@@ -22,16 +22,25 @@ const Simplifier = {
       }
 
       // image-only slides
-      const lessonImage = slides[i].querySelector("lesson-image")
+      const lessonImage = slides[i].querySelector("lesson-image");
       if (lessonImage) {
-        const imageFiller = document.createElement("div");
-        imageFiller.style.width = "100vw";
-        imageFiller.style.height = "100vh";
-        lessonImage.appendChild(imageFiller);
+        // this is necessary so that the pointer has full range of the slide
+        lessonImage.style.display = "block";
+        lessonImage.style.height = "1em";
 
+        // slide images work best when they're sized to 1920x1080
         slides[i].setAttribute("data-background-image", lessonImage.getAttribute("src"));
-        slides[i].setAttribute("data-background-size", "contain");
-        slides[i].setAttribute("data-background-color", "#000");
+        slides[i].setAttribute("data-background-size", "100%");
+      }
+
+      // auto-animate slides (see https://revealjs.com/auto-animate/)
+      const lessonAnimate = slides[i].querySelector("lesson-animate");
+      if (lessonAnimate) {
+        slides[i].setAttribute("data-auto-animate", true);
+        slides[i].setAttribute(
+          "data-auto-animate-easing",
+          "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+        );
       }
 
       // "wide" elements fit across the entire slide
@@ -91,4 +100,3 @@ const Simplifier = {
 };
 
 export default Simplifier;
-
