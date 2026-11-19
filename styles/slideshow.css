@@ -18,6 +18,14 @@
 
 /* for simplified text of slide types */
 
+.lesson-background {
+  background-color: var(--l-lesson-background-color);
+  background-image: var(--l-lesson-background-image);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 lesson-welcome {
   display: block;
   text-align: center;

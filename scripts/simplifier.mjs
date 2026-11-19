@@ -5,6 +5,9 @@ const Simplifier = {
   init: (deck) => {
     const slides = deck.getSlides();
     for (let i = 0; i < slides.length; ++i) {
+      // common slide background;
+      slides[i].setAttribute("data-state", "lesson-background");
+
       // welcome slide
       if (slides[i].querySelector("lesson-welcome")) {
         slides[i].setAttribute("data-state", "lesson-welcome-background");

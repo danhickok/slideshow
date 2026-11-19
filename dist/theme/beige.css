@@ -37,6 +37,8 @@
   --r-selection-color: #333;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
+  --l-lesson-background-color: radial-gradient(#fff, #f7f2d3);
+  --l-lesson-background-image: url("../../images/beige-background.png");
   --l-lesson-welcome-background-color: #f7f3de;
   --l-lesson-welcome-background-image: url("../../images/beige-welcome.png"),
     radial-gradient(#fff, #f7f2d3);

@@ -34,6 +34,8 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
+  --l-lesson-background-color: #002b36;
+  --l-lesson-background-image: url("../../images/moon-background.png");
   --l-lesson-welcome-background-color: #002b36;
   --l-lesson-welcome-background-image: url("../../images/moon-welcome.png");
   --l-lesson-title-background-color: #002b36;
