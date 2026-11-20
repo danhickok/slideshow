@@ -277,7 +277,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
 <div style="display: flex;">
   <div
     data-id="circle1"
-    style="background-color: #ff4102;
+    style="color: black;
+      background-color: #ff4102;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;
@@ -287,7 +288,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
   </div>
   <div
     data-id="circle2"
-    style="background-color: #ffe30f;
+    style="color: black;
+      background-color: #ffe30f;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;
@@ -297,7 +299,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
   </div>
   <div
     data-id="circle3"
-    style="background-color: #00ff21;
+    style="color: black;
+      background-color: #00ff21;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;
@@ -320,7 +323,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
   <div
     data-id="circle1"
     data-auto-animate-delay="0"
-    style="background-color: #ff4102;
+    style="color: black;
+      background-color: #ff4102;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;
@@ -339,7 +343,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
   <div
     data-id="circle2"
     data-auto-animate-delay="0.1"
-    style="background-color: #ffe30f;
+    style="color: black;
+      background-color: #ffe30f;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;
@@ -359,7 +364,8 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
   <div
     data-id="circle3"
     data-auto-animate-delay="0.2"
-    style="background-color: #00ff21;
+    style="color: black;
+      background-color: #00ff21;
       width: 150px; height: 150px;
       border-radius: 50%;
       display: grid;

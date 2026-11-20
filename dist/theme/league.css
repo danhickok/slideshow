@@ -7,8 +7,8 @@
   font-style: normal;
 }
 :root {
-  --r-background: radial-gradient(#555a5f, #1c1e20);
-  --r-background-color: #1c1e20;
+  --r-background: radial-gradient(#4d4339, #1a1613);
+  --r-background-color: #1a1613;
   --r-main-font: Lato, sans-serif;
   --r-main-font-size: 40px;
   --r-main-color: #eee;
@@ -21,7 +21,7 @@
   --r-heading-text-transform: none;
   --r-heading-text-shadow: 0px 0px 6px #0003;
   --r-heading-font-weight: normal;
-  --r-heading1-text-shadow: none;
+  --r-heading1-text-shadow: 0.07em 0.07em 0.05em black;
   --r-heading1-size: 3.77em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
@@ -34,30 +34,30 @@
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-lesson-common-background-color: 1c1e20;
+  --l-lesson-common-background-color: 1a1613;
   --l-lesson-common-background-image:
-    url("../../images/league-background.png"), radial-gradient(#555a5f, #1c1e20);
-  --l-lesson-welcome-background-color: #1c1e20;
+    url("../../images/league-background.png"), radial-gradient(#4d4339, #1a1613);
+  --l-lesson-welcome-background-color: #1a1613;
   --l-lesson-welcome-background-image:
-    url("../../images/league-welcome.png"), radial-gradient(#555a5f, #1c1e20);
-  --l-lesson-title-background-color: #1c1e20;
+    url("../../images/league-welcome.png"), radial-gradient(#4d4339, #1a1613);
+  --l-lesson-title-background-color: #1a1613;
   --l-lesson-title-background-image:
-    url("../../images/league-title.png"), radial-gradient(#555a5f, #1c1e20);
-  --l-lesson-section-background-color: #1c1e20;
+    url("../../images/league-title.png"), radial-gradient(#4d4339, #1a1613);
+  --l-lesson-section-background-color: #1a1613;
   --l-lesson-section-background-image:
-    url("../../images/league-section.png"), radial-gradient(#555a5f, #1c1e20);
+    url("../../images/league-section.png"), radial-gradient(#4d4339, #1a1613);
   --l-passage-font: Lato, sans-serif;
   --l-passage-color: #eee;
-  --l-passage-background-color: #1c1e20;
+  --l-passage-background-color: #1a1613;
   --l-passage-scrollbar-slide: #4f555c;
-  --l-passage-scrollbar-background: #1c1e20;
+  --l-passage-scrollbar-background: #1a1613;
   --l-verse-font: Lato, sans-serif;
   --l-verse-color: #6bc2ed;
 }
 
 /* Custom for lessons */
 .lesson-section-background {
-  background-color: #1c1e20;
+  background-color: #1a1613;
   background-image: url("../../images/league.jpg");
   background-size: cover;
 }

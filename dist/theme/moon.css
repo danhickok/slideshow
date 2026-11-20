@@ -21,7 +21,7 @@
   --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
-  --r-heading1-text-shadow: none;
+  --r-heading1-text-shadow: 0.07em 0.07em 0.05em black;
   --r-heading1-size: 3.77em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
