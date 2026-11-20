@@ -28,8 +28,8 @@
   --r-selection-color: #111;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
-  --l-lesson-background-color: #111;
-  --l-lesson-background-image: url("../../images/night-background.png");
+  --l-lesson-common-background-color: #111;
+  --l-lesson-common-background-image: url("../../images/night-background.png");
   --l-lesson-welcome-background-color: #111;
   --l-lesson-welcome-background-image: url("../../images/night-welcome.png");
   --l-lesson-title-background-color: #111;

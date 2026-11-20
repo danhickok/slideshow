@@ -37,17 +37,18 @@
   --r-selection-color: #333;
   --r-overlay-element-bg-color: 0 0 0;
   --r-overlay-element-fg-color: 240 240 240;
-  --l-lesson-background-color: radial-gradient(#fff, #f7f2d3);
-  --l-lesson-background-image: url("../../images/beige-background.png");
+  --l-lesson-common-background-color: #f7f3de;
+  --l-lesson-common-background-image:
+    url("../../images/beige-background.png"), radial-gradient(#fff, #f7f2d3);
   --l-lesson-welcome-background-color: #f7f3de;
-  --l-lesson-welcome-background-image: url("../../images/beige-welcome.png"),
-    radial-gradient(#fff, #f7f2d3);
+  --l-lesson-welcome-background-image:
+    url("../../images/beige-welcome.png"), radial-gradient(#fff, #f7f2d3);
   --l-lesson-title-background-color: #f7f3de;
-  --l-lesson-title-background-image: url("../../images/beige-title.png"),
-    radial-gradient(#fff, #f7f2d3);
+  --l-lesson-title-background-image:
+    url("../../images/beige-title.png"), radial-gradient(#fff, #f7f2d3);
   --l-lesson-section-background-color: #f7f3de;
-  --l-lesson-section-background-image: url("../../images/beige-section.png"),
-    radial-gradient(#fff, #f7f2d3);
+  --l-lesson-section-background-image:
+    url("../../images/beige-section.png"), radial-gradient(#fff, #f7f2d3);
   --l-passage-font: "Source Sans Pro", Helvetica, sans-serif;
   --l-passage-color: #000;
   --l-passage-background-color: #f3eabd;

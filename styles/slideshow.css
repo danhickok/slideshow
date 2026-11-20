@@ -18,9 +18,9 @@
 
 /* for simplified text of slide types */
 
-.lesson-background {
-  background-color: var(--l-lesson-background-color);
-  background-image: var(--l-lesson-background-image);
+.lesson-common-background {
+  background-color: var(--l-lesson-common-background-color);
+  background-image: var(--l-lesson-common-background-image, none);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@ lesson-welcome {
 
 .lesson-welcome-background {
   background-color: var(--l-lesson-welcome-background-color);
-  background-image: var(--l-lesson-welcome-background-image);
+  background-image: var(--l-lesson-welcome-background-image, none);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ lesson-title {
 
 .lesson-title-background {
   background-color: var(--l-lesson-title-background-color);
-  background-image: var(--l-lesson-title-background-image);
+  background-image: var(--l-lesson-title-background-image, none);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -59,7 +59,7 @@ lesson-section {
 
 .lesson-section-background {
   background-color: var(--l-lesson-section-background-color);
-  background-image: var(--l-lesson-section-background-image);
+  background-image: var(--l-lesson-section-background-image, none);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
