@@ -65,6 +65,32 @@ lesson-section {
   background-repeat: no-repeat;
 }
 
+lesson-top {
+  display: block;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+lesson-bottom {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 850px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
 lesson-left {
   display: block;
   position: absolute;

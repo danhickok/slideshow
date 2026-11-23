@@ -53,15 +53,19 @@ shows the notes.
 
 ---
 
-There are special tags you can use for different kinds of slides:
+Tags for special slides:
+
+<div style="font-size: 0.75em;">
 
 | Tag                | Effects                                     |
 | ------------------ | ------------------------------------------- |
 | `<lesson-welcome>` | Centers contents; (default) fade transition |
 | `<lesson-title>`   | Centers contents; (default) fade transition |
 | `<lesson-section>` | Centers contents; left-to-right transition  |
-| `<lesson-image>`   | Full-screen image (e.g., for maps)          |
+| `<lesson-image>`   | Full-screen image (for maps or background)  |
 | `<lesson-animate>` | Auto-animation (explained later)            |
+
+</div>
 
 ---
 
@@ -69,8 +73,8 @@ There are special tags you can use for different kinds of slides:
 
 ===
 
-The `<lesson-image>` tag is meant to be the only thing in the slide. If you need
-any headers or captions, typically you'd embed text directly into your image.
+The `<lesson-image>` tag can be the only thing in the slide.   When that's the
+case, you'd want to embed any headers or captions in the image itself.
 
 Images work best when they're sized to fit the target screen size of 1920 x 1080
 pixels.
@@ -79,6 +83,35 @@ Note that you can press the "P" key to toggle the pointer on or off. This is a
 finger shape that can point anywhere on the image. The place the pointer points
 to in the speaker view should be the same place (within a few pixels) of where
 it's pointing to in the audience view.
+
+---
+
+<lesson-image src="../../images/example-left-background.png">
+
+<lesson-right>
+
+\
+\
+The `<lesson-image>` tag can also be used to include a **custom background** for
+your slide.
+
+</lesson-right>
+
+</lesson-image>
+
+---
+
+<lesson-image src="../../images/example-right-background.png">
+
+<lesson-left style="color: white; text-align: right;">
+
+This can break up the monotony of slide after slide containing only text.
+
+It can also have an **impact** on what is remembered from your lesson.
+
+</lesson-left>
+
+</lesson-image>
 
 ---
 
@@ -125,6 +158,40 @@ You'll notice that the text wraps around and allows it to expand for longer
 sentences. The more text you add, the taller the box becomes.
 
 </lesson-float>
+
+---
+
+<lesson-top>
+
+A more traditional layout
+
+</lesson-top>
+
+<lesson-bottom>
+
+If you want a slide layout that's more like PowerPoint's title/body arrangement,
+you can use a `<lesson-top>` tag to contain the title and a `<lesson-bottom>`
+tag to contain the body.
+
+The title is automatically bold and slightly larger.
+
+</lesson-bottom>
+
+---
+
+<lesson-top>
+
+A more traditional layout
+
+</lesson-top>
+
+<lesson-bottom>
+
+Keep in mind that if the contents of the `<lesson-body>` tag is too large, it
+may cause the vertical placement of the title to shift --- leading to a
+noticeable variation from slide to slide.
+
+</lesson-bottom>
 
 ---
 
@@ -379,7 +446,7 @@ Use the `<lesson-animate>` tag in adjacent slides. It's as easy as
     style="display: grid;
       place-items: center start;">
     Add a "data-auto-animate-delay" attribute to each element in the second
-    slide to provide a fractional number of seconds to wait until it's displayed.
+    slide to provide a fractional number of seconds of delay.
   </div>
 
 </div>
