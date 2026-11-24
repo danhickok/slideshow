@@ -9,12 +9,12 @@ Reveal.js provides a way to define slides using HTML.  It optionally lets you us
 ## Features
 
 * Define your **entire presentation** using plain text in Markdown format.
-* **Quote characters are automatically "curled"** for you, so you can use plain old straight quotes in your content.
+* **Quote characters are automatically "curled"** for you, so you can type plain old straight quotes in your content, but have it look professional when presented.
 * Since Markdown allows you to include HTML tags, you can **mix plain text and any HTML,** including styled text, images, graphics, videos &mdash; whatever you wish.
-* All slides can be given **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  Any slide can be given a unique background image.
+* All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  Any slide can be given a unique background image.
 * A **speaker's view** (provided by a Reveal plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
 * **A pointer is available** to let you draw attention to parts of your slide using your mouse.  The pointer simultaneously appears on both the audience view and speaker's view.
-* A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.
+* A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.  The box scrolls simultaneously in both the audience view ans speaker's view.
 * While the slideshow is visible to the audience, **the computer's sleep functionality is suspended** (so you don't have the presentation suddenly disappear after a brief pause).
 * Use one of **over a dozen different themes** to style your slides, or create one of your own.
 
@@ -61,11 +61,25 @@ You may want to keep a copy of the original "content.md" because it contains sev
 | \* Text | A bulleted item begins with an asterisk. |
 | 1. Text | A numbered item begins with a number and period. |
 
+#### Animation symbols
+
+| Symbol | What it does |
+| --- | --- |
+| {f} Text | The text fades into view when advancing the presentation. |
+
+
+
+
+
 #### Special slide tags
 
 The following tags govern the look and behavior of the entire slide:
 
-* `<lesson-welcome>` &mdash; Put this tag at the top of your first slide with a welcome message.  The content is centered and the slide has a special background image.
+* `<lesson-welcome>` &mdash; Enclose the content of your first slide with a welcome message.  The content is centered and the slide has its own background image.
+
+* `<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has a special background image.
+
+* `<lesson-section>` &mdash; 
 
 It is recommended that you also include the closing tag at the bottom of the slide, though in some cases you can get away without it.
 
