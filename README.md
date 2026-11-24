@@ -1,6 +1,6 @@
 # Slideshow
 
-Do you need to give a presentation, but hate preparing slides in Microsoft PowerPoint?  Do you wish you could just take your notes and divide them up into slides and be done with it?  Do you wish you could use the strength and capabilities of HTML and CSS in creating slides?
+Do you need to give a presentation, but hate preparing slides in Microsoft PowerPoint?  Do you wish you could just take your notes and divide them up into slides and be done with it?  Do you wish you could use the strength and capabilities of HTML and CSS to create slides?
 
 If so, maybe this application is for you.  This is built using [**Reveal.js**](https://revealjs.com/) &ndash; **the HTML Presentation Framework.**
 
@@ -12,9 +12,9 @@ Reveal.js provides a way to define slides using HTML.  It optionally lets you us
 * **Quote characters are automatically &ldquo;curled&rdquo;** for you, so you can type plain old straight quotes in your content, but have it look more natural when presented.
 * Since Markdown allows you to include HTML tags, you can **mix plain text and any HTML,** including styled text, images, graphics, videos &mdash; whatever you wish.
 * All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  And any slide can be given a unique background image.
-* A **speaker's view** (provided by a Reveal plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
+* A **speaker's view** (provided by a Reveal.js plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
 * **A pointer is available** to let you draw attention to parts of your slide using your mouse.  The pointer simultaneously appears on both the audience view and speaker's view.
-* A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.  The box scrolls simultaneously in both the audience view ans speaker's view.
+* A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.  The box scrolls simultaneously in both the audience view and speaker's view.
 * While the slideshow is visible to the audience, **the computer's sleep functionality is suspended** (so you don't have the presentation suddenly disappear after a brief pause).
 * Use one of **over a dozen different themes** to style your slides, or create one of your own.
 
@@ -26,7 +26,7 @@ The slides can be presented on any monitor, but they work best on an FHD resolut
 
 ## 1. Create slide content
 
-Slides are described in a plain text file in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
+Slides are described in the plain text file "content.md", in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
 
 Modify the text of the file "content.md" to define your slide content.  Each slide is simply text separated by three hyphens, with an empty line above and below them.  So you can have as many slides as you want, all defined in this one file.  For example:
 
@@ -89,8 +89,8 @@ Markdown conventions are translated into formatted text when the slides are pres
 | \-\-\- | Make an m-dash (&mdash;) with three hyphens |
 | \ | (in front of another character) Display the character as-is |
 | \ | (at end of line) Add a line break |
-| \* Text | A bulleted list item begins with an asterisk and a space. |
-| 1. Text | A numbered list item begins with a number, a period, and a space. |
+| \* Text | A bulleted list item begins with an asterisk and a space |
+| 1. Text | A numbered list item begins with a number, a period, and a space |
 
 Most Markdown conventions should work, including extended conventions for tables, code blocks, images, and so forth.  Consult the [Markdown Guide Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for more symbols.
 
@@ -159,7 +159,7 @@ Example:
 
 Soft rain starts to fall\
 Quiet drops tap on the leaves\
-Cool air fills the yard
+Cool air calms ferrets
 
 <right-justified>
 
@@ -190,7 +190,7 @@ Example:
 
 * First point
 * Second point
-* Third point
+* Third ferret
 
 </lesson-right>
 ```
@@ -202,9 +202,11 @@ Example:
 ```plaintext
 Superman is amazing.
 
-Superman is known for being faster than a bullet and stronger than a locomotive.
+Superman is known for being faster than a bullet and stronger
+than a locomotive.
 
-But they never mention how he is compared to bottled milk or jazz music.
+But they never mention how he is compared to bottled milk or
+jazz music.  Or ferrets, for that matter.
 
 <lesson-float class="fragment">
 
@@ -228,7 +230,8 @@ Types of clouds
 
 <lesson-bottom>
 
-There are several different kinds of clouds.  Here are three common types:
+There are several different kinds of clouds.  Here are three
+common types:
 
 * **Cirrus** -- thin, feathery strands
 * **Stratus** -- uniform gray layers
@@ -255,7 +258,7 @@ This is just a little smaller
 </wide>
 ```
 
-`<passage>` &mdash; This tag was designed specifically for Bible passages, but can be used for any text that exceeds the normal size of a slide.  The contents will scroll when you press the Up or Down arrow keys on the keyboard.
+`<passage>` &mdash; This tag was designed specifically for Bible passages, but can be used for any text that exceeds the normal size of a slide.  The contents will scroll when you press the up or down arrow keys on the keyboard.
 
 This tag is designed to take up almost the entire vertical space of the slide, with a little bit of room at the top for a heading.  The scrollable contents appear with a slightly different background and (depending on the theme) a slightly different font.
 
@@ -266,28 +269,41 @@ Example:
 
 <passage>
 
-[16] "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. [17] For God did not send his Son into the world to condemn the world, but in order that the world might be saved through him. (ESV)
+[16] "For God so loved the world, that he gave his only Son,
+that whoever believes in him should not perish but have eternal
+life. [17] For God did not send his Son into the world to
+condemn the world, but in order that the world might be saved
+through him. *(ESV)*
 
-*Note: Numbers in square brackets (verse numbers) are transformed into italicized text in a different color, with the brackets removed.*
+*Note: Numbers in square brackets (verse numbers) are
+transformed into italicized text in a different color, with the
+brackets removed.*
 
 </passage>
 ```
-
-
-
-
-
-
-***Tip:***  Empty lines around tags are important.  This helps Reveal's Markdown interpretation engine distinguish tags (as containers) from their contents.  If something doesn't look right, try separating the tags with empty lines.
+***Tip:***  Empty lines around tags are important.  This helps Reveal.js's Markdown interpretation engine distinguish tags (as containers) from their contents.  If something doesn't look right, try separating the tags with empty lines.
 
 
 ### Animation
 
-TODO: mention the fragment class, then list the symbols
+The Reveal.js display engine provides a number of ways to animate objects in slides.  The most common one is called "fragment", though in my opinion, it's better referred to as "fade in".  It's a CSS class that can be added to an HTML element to make it a *fragment* that gets added to the slide with an advancement (that is, pressing the right arrow key).
+
+See the `<lesson-float>` example above for how this can be added to an element.
+
+The problem is, this is difficult to use in plain Markdown text.  So I added the following shortcuts you can easily add to a line or (with some exceptions) an element.  These shortcuts cover most of the animation features available in the Reveal.js engine.
 
 | Symbol | What it does |
 | --- | --- |
-| {f} Text | The text fades into view when advancing the presentation. |
+| {f} Text | The text fades into view when advancing the presentation |
+| {fo} | The text fades out of view |
+| {fio} | The text fades in, then fade outs with the following advancement |
+| {sfo} | The text "semi-fades out" (turns to gray) |
+| {fis} | The text fades in then semi-fades out with the following advancement |
+| {t} | The text is struck through |
+
+TODO: the full line only shortcuts
+
+
 
 TODO: explain how to use the `<lesson-animate>` tag
 
