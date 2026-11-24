@@ -4,14 +4,14 @@ Do you need to give a presentation, but hate preparing slides in Microsoft Power
 
 If so, maybe this application is for you.  This is built using [**Reveal.js**](https://revealjs.com/) &ndash; **the HTML Presentation Framework.**
 
-Reveal.js provides a way to define slides using HTML.  It optionally lets you use plain text in [Markdown format](https://markdownguide.offshoot.io/) to define slides.  I've built this app on top of Reveal.js version 6, and set it up to use Markdown exclusively for the slide content.  I've also added some additional features to make it easy to add style and animation.
+Reveal.js provides a way to define slides using HTML.  It optionally lets you use plain text in [Markdown format](https://www.markdownguide.org/) to define slides.  I've built this app on top of Reveal.js version 6, and set it up to use Markdown exclusively for the slide content.  I've also added some additional features to make it easy to add style and animation.
 
 ## Features
 
 * Define your **entire presentation** using plain text in Markdown format.
-* **Quote characters are automatically "curled"** for you, so you can type plain old straight quotes in your content, but have it look professional when presented.
+* **Quote characters are automatically &ldquo;curled&rdquo;** for you, so you can type plain old straight quotes in your content, but have it look more professional when presented.
 * Since Markdown allows you to include HTML tags, you can **mix plain text and any HTML,** including styled text, images, graphics, videos &mdash; whatever you wish.
-* All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  Any slide can be given a unique background image.
+* All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  And any slide can be given a unique background image.
 * A **speaker's view** (provided by a Reveal plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
 * **A pointer is available** to let you draw attention to parts of your slide using your mouse.  The pointer simultaneously appears on both the audience view and speaker's view.
 * A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.  The box scrolls simultaneously in both the audience view ans speaker's view.
@@ -27,9 +27,9 @@ The slides can be presented on any monitor, but they work best on an FHD resolut
 
 Slides are described in a plain text file in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
 
-Modify the text of the file "content.md" to define your slide content.  Each slide is simply text separated by three hyphens, so you can have as many slides as you want, all defined in this one file.  Example:
+Modify the text of the file "content.md" to define your slide content.  Each slide is simply text separated by three hyphens, with an empty line above and below them.  So you can have as many slides as you want, all defined in this one file.  For example:
 
-```markdown
+```plaintext
 
 First slide contents goes here
 
@@ -41,34 +41,52 @@ Second slide contents goes here
 
 Third slide contents goes here
 
-(and so forth)
+```
+
+If you want to include speaker notes for a slide, separate the slide content from the notes with three equals signs, with an empty line above and below them like this:
+
+```plaintext
+
+First slide contents goes here
+
+---
+
+Second slide contents goes here
+
+===
+
+Speaker notes for the second slide go here
+
+---
+
+Third slide contents goes here
 
 ```
 
-You may want to keep a copy of the original "content.md" because it contains several examples of how to use the Markdown symbols and special notation that are described below.
+***Tip:***  You may want to keep a copy of the original "content.md" for reference as it contains several examples of how to use the Markdown symbols and special notation that are described below.
 
-#### Symbols you can use
+### Symbols you can use
+
+#### Markdown formatting
+
+Markdown conventions are translated into formatted text when the slides are presented.
 
 | Symbol | What it does |
 | --- | --- |
-| \-\-\- | Three hyphens with an empty line above and below it separate one slide from another. |
-| \=\=\= | Three equals signs with an empty line above and below separate a slide's content and its speaker notes. |
 | \#&nbsp;Text | Header text begins with a hash (\#) |
 | \#\#&nbsp;Text | Subheader text begins with two hashes (\#\#) |
 | \#\#\#&nbsp;Text | Sub-subheader text begins with three hashes (\#\#\#) |
-| \*\*Text\*\* | Surrounding text with double-asterisks **makes it bold** |
+| \#\#\#\#&nbsp;Text | Sub-sub-subheader text begins with four hashes (\#\#\#\#) |
 | \_Text\_ | Surrounding text with underscores _makes it italic_ |
-| \* Text | A bulleted item begins with an asterisk. |
-| 1. Text | A numbered item begins with a number and period. |
+| \*Text\* | Surrounding text with single asterisks *also makes it italic* |
+| \*\*Text\*\* | Surrounding text with double asterisks **makes it bold** |
+| \*\*\*Text\*\*\* | Surrounding text with triple asterisks ***makes it bold italic*** |
+| \-\- | Make an n-dash (&ndash;) with two hyphens |
+| \-\-\- | Make an m-dash (&mdash;) with three hyphens |
+| \* Text | A bulleted list item begins with an asterisk and a space. |
+| 1. Text | A numbered list item begins with a number, a period, and a space. |
 
-#### Animation symbols
-
-| Symbol | What it does |
-| --- | --- |
-| {f} Text | The text fades into view when advancing the presentation. |
-
-
-
+Most Markdown conventions should work, including extended conventions for tables, code blocks, images, and so forth.  Consult the [Markdown Guide Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for more symbols.
 
 
 #### Special slide tags
@@ -77,18 +95,60 @@ The following tags govern the look and behavior of the entire slide:
 
 * `<lesson-welcome>` &mdash; Enclose the content of your first slide with a welcome message.  The content is centered and the slide has its own background image.
 
+  Example:
+
+  ```plaintext
+  <lesson-welcome>
+
+  # Welcome to Our Class
+  ## Room 101
+
+  </lesson-welcome>
+  ```
+
 * `<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has a special background image.
 
-* `<lesson-section>` &mdash; 
+  Example:
 
-It is recommended that you also include the closing tag at the bottom of the slide, though in some cases you can get away without it.
+  ```plaintext
+  <lesson-title>
 
+  Tonight's Lesson:
+  # Raising Ferrets
+  ### for Fun and Profit
+
+  </lesson-title>
+  ```
+
+* `<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.
+
+  Example:
+
+  ```plaintext
+  <lesson-section>
+
+  # Why Gloves are Important
+  ### *Ferrets can Bite!*
+
+  </lesson-section>
+  ```
 
 #### Special content tags
 
+left off here
 
 
 
+#### Animation symbols
+
+
+
+| Symbol | What it does |
+| --- | --- |
+| {f} Text | The text fades into view when advancing the presentation. |
+
+
+-------------------------------------------------------------old
 
 
 | `<lesson-welcome>` | Put this tag at the top of your first slide with a welcome message &ndash; it's centered text | This app |
