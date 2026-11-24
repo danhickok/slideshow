@@ -21,9 +21,10 @@ Reveal.js provides a way to define slides using HTML.  It optionally lets you us
 The slides can be presented on any monitor, but they work best on an FHD resolution (1920x1080) monitor or TV.  The default font allows for 8-10 lines of text per slide, so the presentation is readable even from the back of a large room.
 
 
-## Instructions for use
 
-### 1. Creating slide content
+# Instructions for use
+
+## 1. Create slide content
 
 Slides are described in a plain text file in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
 
@@ -65,9 +66,12 @@ Third slide contents goes here
 
 ***Tip:***  You may want to keep a copy of the original "content.md" for reference as it contains several examples of how to use the Markdown symbols and special notation that are described below.
 
-### Symbols you can use
 
-#### Markdown formatting
+
+## Symbols you can use
+
+
+### Markdown formatting
 
 Markdown conventions are translated into formatted text when the slides are presented.
 
@@ -83,17 +87,21 @@ Markdown conventions are translated into formatted text when the slides are pres
 | \*\*\*Text\*\*\* | Surrounding text with triple asterisks ***makes it bold italic*** |
 | \-\- | Make an n-dash (&ndash;) with two hyphens |
 | \-\-\- | Make an m-dash (&mdash;) with three hyphens |
+| \ | (in front of another character) Display the character as-is |
+| \ | (at end of line) Add a line break |
 | \* Text | A bulleted list item begins with an asterisk and a space. |
 | 1. Text | A numbered list item begins with a number, a period, and a space. |
 
 Most Markdown conventions should work, including extended conventions for tables, code blocks, images, and so forth.  Consult the [Markdown Guide Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for more symbols.
 
 
-#### Special slide tags
+### Special slide tags
 
 The following tags govern the look and behavior of the entire slide:
 
-`<lesson-welcome>` &mdash; Enclose the content of your very first slide with a welcome message.  The content is centered and the slide has its own background image.
+`<lesson-welcome>` &mdash; Enclose the content of your very first slide with a
+welcome message.  The content is centered and the slide has its own background
+image.
 
 Example:
 
@@ -106,7 +114,7 @@ Example:
 </lesson-welcome>
 ```
 
-`<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has a special background image.
+`<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has its own background image.
 
 Example:
 
@@ -120,7 +128,7 @@ Tonight's Lesson:
 </lesson-title>
 ```
 
-`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.
+`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.  (All other slides use a fade transition.)
 
 Example:
 
@@ -133,43 +141,168 @@ Example:
 </lesson-section>
 ```
 
-#### Special content tags
 
-left off here
+### Special content tags
+
+The following tags provide some layout control over parts of the slide's content:
+
+`<centered>` and `<right-justified>` &mdash; Normally text in a slide is left-justified.  Use these tags to center or right-justify lines in the content.
+
+Example:
+
+```plaintext
+<centered>
+
+**Haiku**
+
+</centered>
+
+Soft rain starts to fall\
+Quiet drops tap on the leaves\
+Cool air fills the yard
+
+<right-justified>
+
+*-- Anonymous*
+
+</right-justified>
+```
+
+`<lesson-left>` and `<lesson-right>` &mdash; These tags allow you to divide the
+slide into a left half and a right half.  (Note that these tags take up the entire vertical space of the slide, so this doesn't leave any vertical room for a header or footer in the slide content.)
+
+Example:
+
+```plaintext
+<lesson-left>
+
+#### Advantages:
+
+* First point
+* Second point
+* Third point
+
+</lesson-left>
+
+<lesson-right>
+
+#### Disadvantages:
+
+* First point
+* Second point
+* Third point
+
+</lesson-right>
+```
+
+`<lesson-float>` &mdash; This tag creates a generally centered box floating over the other contents of a slide.  Combined with animation (explained in the next section), this can add some emphasis to the slide contents.
+
+Example:
+
+```plaintext
+Superman is amazing.
+
+Superman is known for being faster than a bullet and stronger than a locomotive.
+
+But they never mention how he is compared to bottled milk or jazz music.
+
+<lesson-float class="fragment">
+
+Note the use of absurdity here.
+
+</lesson-float>
+```
+
+`<lesson-top>` and `<lesson-bottom>` &mdash; These tags separate the contents of a slide into a title section at the top of the slide and a body section underneath it.
+
+The title is always positioned near the top of the slide and the body is always a given height, so the result is more like PowerPoint's default layout.  The title is automatically bolded and a little big larger than the other text.
+
+Example:
+
+```plaintext
+<lesson-top>
+
+Types of clouds
+
+</lesson-top>
+
+<lesson-bottom>
+
+There are several different kinds of clouds.  Here are three common types:
+
+* **Cirrus** -- thin, feathery strands
+* **Stratus** -- uniform gray layers
+* **Cumulus** -- puffy, cotton-like
+
+</lesson-bottom>
+```
+
+`<wide>` &mdash; This tag makes its contents big enough to stretch horizontally across the entire slide.  The less text there is, the larger the font.
+
+Example:
+
+```plaintext
+<wide>
+
+THIS IS HUGE
+
+</wide>
+
+<wide>
+
+This is just a little smaller
+
+</wide>
+```
+
+`<passage>` &mdash; This tag was designed specifically for Bible passages, but can be used for any text that exceeds the normal size of a slide.  The contents will scroll when you press the Up or Down arrow keys on the keyboard.
+
+This tag is designed to take up almost the entire vertical space of the slide, with a little bit of room at the top for a heading.  The scrollable contents appear with a slightly different background and (depending on the theme) a slightly different font.
+
+Example:
+
+```plaintext
+#### *John 3:16--17*
+
+<passage>
+
+[16] "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. [17] For God did not send his Son into the world to condemn the world, but in order that the world might be saved through him. (ESV)
+
+*Note: Numbers in square brackets (verse numbers) are transformed into italicized text in a different color, with the brackets removed.*
+
+</passage>
+```
 
 
 
-#### Animation symbols
 
 
+
+***Tip:***  Empty lines around tags are important.  This helps Reveal's Markdown interpretation engine distinguish tags (as containers) from their contents.  If something doesn't look right, try separating the tags with empty lines.
+
+
+### Animation
+
+TODO: mention the fragment class, then list the symbols
 
 | Symbol | What it does |
 | --- | --- |
 | {f} Text | The text fades into view when advancing the presentation. |
 
+TODO: explain how to use the `<lesson-animate>` tag
+
+### Background images
+
+TODO: describe the `<lesson-image>` tag
+
+### Themes
+
+TODO: describe the theme files and associated images folder, and how to use them
 
 -------------------------------------------------------------old
 
 
-| `<lesson-welcome>` | Put this tag at the top of your first slide with a welcome message &ndash; it's centered text | This app |
-| `<lesson-title>` | Put this tag at the top of your second slide &ndash; it's centered and fades into view | This app |
-| `<lesson-section>` | Put this tag at the top of each slide that begins a new section &ndash; it's centered and horizontally slides into view | This app |
-| `<lesson-image>` | Use this on a slide by itself, with a "src" attribute (like an `<img>` element) | This app |
-| `<lesson-left>` | Text inside this tag takes up the left side of a slide | This app |
-| `<lesson-right>` | Text inside this tag takes up the right side of a slide | This app |
-| `<lesson-float>` | Text inside this tag is placed in a centered, floating box with a shadow | This app |
-| `<passage>` | Text inside this tag appears in a serif font and is scrollable via the up and down arrow keys | This app |
-| `{f}` | Animation: place this on any line to make it "fade" into view as you press the arrow key | Reveal |
-
-Markdown text can do other things, too.  Look up the [standard conventions for Markdown](https://www.markdownguide.org/basic-syntax/) to learn more about how to make bulleted or numbered lists, and tables, and try them out.
-
-Markdown also allows you to use regular HTML tags like `<div>`, `<span>`, `<p>`, and `<img>`.
-
-If you add `class="fragment"` to any tag, Reveal.js will delay showing that part until you press the right arrow key.  You can use this for emphasis as you speak through your slides.  The shortcut `{f}` can also be used.  The sample content demonstrates several other animation shortcuts as well.
-
-Reveal.js also includes other features for style and animation in Markdown files.  Check out the [documentation](https://revealjs.com/markdown/#external-markdown) when you have a chance.
-
-### Starting the web server
+## 2. Start the web server
 
 The slideshow requires a web server.  If you've got one on your machine, great! All you need to do is set it up on your server and open your browser to that site.
 
