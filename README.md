@@ -8,8 +8,8 @@ Reveal.js provides a way to define slides using HTML.  It optionally lets you us
 
 ## Features
 
-* Define your **entire presentation** using plain text in Markdown format.
-* **Quote characters are automatically &ldquo;curled&rdquo;** for you, so you can type plain old straight quotes in your content, but have it look more professional when presented.
+* Define your **entire presentation** with a single plain text file in Markdown format.
+* **Quote characters are automatically &ldquo;curled&rdquo;** for you, so you can type plain old straight quotes in your content, but have it look more natural when presented.
 * Since Markdown allows you to include HTML tags, you can **mix plain text and any HTML,** including styled text, images, graphics, videos &mdash; whatever you wish.
 * All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  And any slide can be given a unique background image.
 * A **speaker's view** (provided by a Reveal plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
@@ -23,7 +23,7 @@ The slides can be presented on any monitor, but they work best on an FHD resolut
 
 ## Instructions for use
 
-### Creating slide content
+### 1. Creating slide content
 
 Slides are described in a plain text file in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
 
@@ -93,45 +93,45 @@ Most Markdown conventions should work, including extended conventions for tables
 
 The following tags govern the look and behavior of the entire slide:
 
-* `<lesson-welcome>` &mdash; Enclose the content of your first slide with a welcome message.  The content is centered and the slide has its own background image.
+`<lesson-welcome>` &mdash; Enclose the content of your very first slide with a welcome message.  The content is centered and the slide has its own background image.
 
-  Example:
+Example:
 
-  ```plaintext
-  <lesson-welcome>
+```plaintext
+<lesson-welcome>
 
-  # Welcome to Our Class
-  ## Room 101
+# Welcome to Our Class
+## Room 101
 
-  </lesson-welcome>
-  ```
+</lesson-welcome>
+```
 
-* `<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has a special background image.
+`<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has a special background image.
 
-  Example:
+Example:
 
-  ```plaintext
-  <lesson-title>
+```plaintext
+<lesson-title>
 
-  Tonight's Lesson:
-  # Raising Ferrets
-  ### for Fun and Profit
+Tonight's Lesson:
+# Raising Ferrets
+### for Fun and Profit
 
-  </lesson-title>
-  ```
+</lesson-title>
+```
 
-* `<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.
+`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.
 
-  Example:
+Example:
 
-  ```plaintext
-  <lesson-section>
+```plaintext
+<lesson-section>
 
-  # Why Gloves are Important
-  ### *Ferrets can Bite!*
+# Why Gloves are Important
+### *Ferrets can Bite!*
 
-  </lesson-section>
-  ```
+</lesson-section>
+```
 
 #### Special content tags
 
