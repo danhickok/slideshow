@@ -345,14 +345,14 @@ Some of the animations available in the Reveal.js engine need to operate on a wh
 
 #### _Slide-based animation_
 
-The line animation symbols are great for that little bit of movement that helps keep your audience's attention.  But sometimes you want something a little more eye-catching.  Reveal.js provides an automatic "tweening" feature that transforms/moves features appearing in adjacent slides.  
+The line animation symbols are great for that little bit of movement that helps keep your audience's attention.  But sometimes you want something more eye-catching.  Reveal.js provides an automatic "tweening" feature that transforms/moves features appearing in adjacent slides.  
 
 The `<lesson-animate>` tag makes this possible.  Here's how to set it up:
 
 1. Define two adjacent slides; enclose each of the slides' contents with this tag.
-2. HTML elements that will transform from the first slide to the second need to have the same "data-id" attribute in each slide, so Reveal.js can match them up to make the transformation.
-3. Define different colors or positions of these matching elements as desired for your animation.
-4. For staggered delays in your animation, use "data-auto-animate-id" instead of "data-id", and include a "data-auto-animate-delay" attribute specifying a fractional number of seconds to wait between elements.
+1. Put elements in each slide.  Any HTML elements that will transform from the first slide to the second need to have the same "data-id" attribute in each slide, so Reveal.js can match them up to make the transformation.
+1. Define different colors or positions of these matching elements as desired for your animation.
+1. For staggered delays in your animation, include a "data-auto-animate-delay" attribute specifying a fractional number of seconds to wait.
 
 Example:
 
@@ -439,21 +439,20 @@ Example:
   </div>
 </div>
 
-
-<div data-auto-animate-id="msg1"
+<div data-id="msg1"
   data-auto-animate-delay="0.8"
   style="text-align: center;
     margin-top: 80px;">
   Go!
 </div>
-<div data-auto-animate-id="msg2"
-  data-auto-animate-delay="1.3"
+<div data-id="msg2"
+  data-auto-animate-delay="1.1"
   style="text-align: center;
     margin-top: 20px;">
   Go!
 </div>
-<div data-auto-animate-id="msg3"
-  data-auto-animate-delay="1.8"
+<div data-id="msg3"
+  data-auto-animate-delay="1.4"
   style="text-align: center;
     margin-top: 20px;">
   Go!
@@ -462,43 +461,101 @@ Example:
 </lesson-animate>
 ```
 
-This simple example doesn't do the auto-animation feature justice.  Look at [Reveal.js's documentation on auto-animation](https://revealjs.com/auto-animate/) for more details.
+This simple example really doesn't do the auto-animation feature justice.  Look at [Reveal.js's documentation on auto-animation](https://revealjs.com/auto-animate/) for more details.
+
+
+### Themes
+
+There are currently 13 themes you can choose from for your slides:
+
+* **beige** &mdash; a gentle swirled background and yellowish color
+* **black** &mdash; a charcoal color with a tree silhouette
+* **black-contrast** &mdash; a plain black background with no image
+* **league** &mdash; a dark brown/black color with curves
+* **moon** &mdash; a dark teal color with a moon image
+* **night** &mdash; a charcoal color with a treeline silhouette
+* **serif** &mdash; a light yellow-green color with ivy borders
+* **simple** &mdash; a white background with yellow curves
+* **sky** &mdash; a sky-blue background with clouds
+* **solarized** &mdash; a teal color with polka dots
+* **white** &mdash; a white background with colorful stripes
+* **white-contrast** &mdash; a plain white background with no image
+* **white-roboto** &mdash; a white background with marble accents 
+
+To select a theme, edit the "index.html" file and look for the style line that looks like this:
+
+```html
+<link rel="stylesheet" href="dist/theme/white-roboto.css?v=1.8" />
+```
+
+Change the name part of the theme file (but keep the path, extension, and version number the same).
+
+You can create your own theme by copying the corresponding .css file in the "dist/theme" folder, then referring to it in the "index.html" file.
 
 
 ### Background images
 
+#### _Theme backgrounds_
 
+Every theme available in this app has a set of four background images in the "images" folder: one for the welcome slide, one for the title slide, one for the section slide, and a background image for all other slides.
 
-TODO: describe the `<lesson-image>` tag
+For example, the "serif" theme has "serif-welcome.png", "serif-title.png", "serif-section.png", and "serif-background.png".
 
-### Themes
+These are all in .png format, which allow for transparencies that work with the theme's background color.  The "welcome" background images are all currently blank (transparent with no image).
 
-TODO: describe the theme files and associated images folder, and how to use them
+You can edit any of these image files as desired with your favorite image editing program.  For example, you could edit the "welcome" background to include a picture of your organization's mascot.
 
--------------------------------------------------------------old
+#### _Custom backgrounds_
+
+When it comes to slide presentations, monotony is your enemy.  To punch things up, you can include a custom background on any regular slide.
+
+To do this, enclose the slide's contents in a `<lesson-image>` tag.  This tag has a "src" attribute similar to an `<img>` tag, and that can refer to an image of your choosing.
+
+Example:
+
+```plaintext
+<lesson-image src="../../images/smiling-ferrets.png">
+
+Slide content goes here
+
+</lesson-image>
+```
+
+A self-closing `<lesson-image>` tag can work as the entire contents of the slide.  This is a great way to display a map when that's part of your presentation.
+
+Example:
+
+```plaintext
+<lesson-image src="../../images/ancient-map.jpg" />
+```
+
+***Tip:*** Images formatted for the slideshow's target resolution of 1920x1080 pixels will work best.
+
 
 
 ## 2. Start the web server
 
-The slideshow requires a web server.  If you've got one on your machine, great! All you need to do is set it up on your server and open your browser to that site.
+The slideshow app requires a web server.  If you've got one on your machine, great! All you need to do is set it up on your server and open your browser to that site.
 
-But if you don't have a web server (or you don't want to add this app to an existing server), you can use a simple Python script to make one.  I've included a batch file "serve.bat" that calls a Python script "serve.py".  Execute that batch file in the folder where this slideshow app exists, and then open your browser to http://localhost:8000 and you're ready to go.
+But if you don't have a web server (or you don't want to add this app to an existing server), you can use the included Python script "serve.py" to make one.  Execute that script in the folder where this app exists, and then open your browser to http://localhost:8000 and you're ready to go.
+
+Some IDEs will let you view the slides while you edit them.  In VS Code, for example, this can be done with the Live Server plugin.  Check the IDE or plugin documentation to see what URL and port is used.
 
 ### While displaying the slides
 
-Slide navigation is performed through Reveal.js. Navigate through the slides using either the left arrow or right arrow on your keyboard.
+Slide navigation is performed through the Reveal.js presentation engine. Navigate through the slides using either the left arrow or right arrow on your keyboard.
 
 You can also use the Home key to return to the beginning of the slide or the End key to go to the last slide (which for this app is always a black slide with no text).
 
 If you press the Esc key, you'll get a quick overview of all your slides.  This provides quick navigation to find a particular slide.
 
-In this app, the up and down arrow keys are reserved for scrollable text.  The text scrolls simultaneously in both the audience view and the speaker view.
-
 You can press the "S" key to open the speaker view in a separate window that shows the current slide, the upcoming slide, and speaker notes.  This is a via a Reveal.js plugin.
 
-This app also includes a feature where when you press the "P" key, a finger-shaped pointer is displayed that moves with your mouse.  The pointer is visible in both the main slide view and the speaker view.  Press "P" again to turn off the pointer.
+In this app, the up and down arrow keys are reserved for scrollable text in the `<passage>` element.  The text scrolls simultaneously in both the audience view and the speaker view.
 
-### When you're done with the slides
+This app also includes a pointer feature.  When you press the "P" key, a finger-shaped pointer is displayed that moves with your mouse.  The pointer is visible in both the main slide view and the speaker view.  Press "P" again to turn off the pointer.
+
+## 3. When you're done with the slides
 
 Simply close the browser window and speaker view window (if you've opened it).
 
