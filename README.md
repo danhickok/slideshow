@@ -236,6 +236,7 @@ common types:
 * **Cirrus** -- thin, feathery strands
 * **Stratus** -- uniform gray layers
 * **Cumulus** -- puffy, cotton-like
+* **Ferrets** -- sorry, ferrets aren't clouds
 
 </lesson-bottom>
 ```
@@ -288,24 +289,64 @@ brackets removed.*
 
 The Reveal.js display engine provides a number of ways to animate objects in slides.  The most common one is called "fragment", though in my opinion, it's better referred to as "fade in".  It's a CSS class that can be added to an HTML element to make it a *fragment* that gets added to the slide with an advancement (that is, pressing the right arrow key).
 
-See the `<lesson-float>` example above for how this can be added to an element.
+See the `<lesson-float>` example above for how this class can be added to an element.
 
-The problem is, this is difficult to use in plain Markdown text.  So I added the following shortcuts you can easily add to a line or (with some exceptions) an element.  These shortcuts cover most of the animation features available in the Reveal.js engine.
+#### _Line-based animation symbols_
 
-| Symbol | What it does |
+The problem is, this is difficult to use in plain Markdown text.  So I created the following shortcuts you can easily add to either a line or (with some exceptions) an inline element, such as `<span>`.  These shortcuts cover most of the animation features available in the Reveal.js engine.
+
+| Symbol | What it does upon advancement |
 | --- | --- |
-| {f} Text | The text fades into view when advancing the presentation |
+| {f} Text | The text fades into view |
 | {fo} | The text fades out of view |
-| {fio} | The text fades in, then fade outs with the following advancement |
+| {fio} | The text fades in, then fade outs with the next advancement |
 | {sfo} | The text "semi-fades out" (turns to gray) |
-| {fis} | The text fades in then semi-fades out with the following advancement |
+| {fis} | The text fades in then semi-fades out with the next advancement |
 | {t} | The text is struck through |
+| {hr} | highlight text by turning it red |
+| {hg} | highlight text by turning it green |
+| {hb} | highlight text by turning it blue |
+| {hcr} | Make the text red then turn normal with the next advancement |
+| {hcg} | Make the text green then turn normal with the next advancement |
+| {hcb} | Make the text blue then turn normal with the next advancement |
 
-TODO: the full line only shortcuts
+Here's an example of a list of bullet points that appear, one at a time, with each advancement:
+
+```plaintext
+### Interesting things about ferrets
+
+* {f} *Heavy sleepers* -- they can sleep for 14-18 hours per
+  day, then burst with energy when awake
+* {f} *Good hearing* -- they can hear frequencies outside of
+  human range (below 20Hz and above 20,000Hz)
+* {f} *War dance* -- they make strange moves when excited or
+  playful, such as arching their backs and hopping sideways
+```
+
+Note that the symbol can appear anywhere in the line to affect it, though it's good to stick to the convention of putting it at the beginning of the line.
+
+Some of the animations available in the Reveal.js engine need to operate on a whole line of text and can't be used in an inline element, because they need vertical space to perform their animation.
+
+| Symbol | What it does upon advancement |
+| --- | --- |
+| {fu} | Fade up the line of text |
+| {fd} | Fade down the line of text |
+| {fl} | Fade left the line of text |
+| {fr} | Fade up the line of text |
+| {g} | Make the text grow large |
+| {s} | Make the text shrink |
+| {b} | Make the text go from blurred to sharp |
+
+#### _Slide-based animation_
 
 
 
 TODO: explain how to use the `<lesson-animate>` tag
+
+
+
+
+
 
 ### Background images
 
