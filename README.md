@@ -338,7 +338,7 @@ Some of the animations available in the Reveal.js engine need to operate on a wh
 | {fu} | Fade up the line of text |
 | {fd} | Fade down the line of text |
 | {fl} | Fade left the line of text |
-| {fr} | Fade up the line of text |
+| {fr} | Fade right the line of text |
 | {g} | Make the text grow large |
 | {s} | Make the text shrink |
 | {b} | Make the text go from blurred to sharp |
