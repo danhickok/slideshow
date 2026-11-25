@@ -1,8 +1,10 @@
 # Slideshow
 
-Do you need to give a presentation, but hate preparing slides in Microsoft PowerPoint?  Do you wish you could just take your notes and divide them up into slides and be done with it?  Do you wish you could use the strength and capabilities of HTML and CSS to create slides?
+Do you need to give a presentation, but hate preparing slides in Microsoft PowerPoint?  Do you wish you could just take your notes and carve them up into slides and be done with it?  Do you wish you could use the strength and capabilities of HTML and CSS to create slides?
 
-If so, maybe this application is for you.  This is built using [**Reveal.js**](https://revealjs.com/) &ndash; **the HTML Presentation Framework.**
+If not, you're probably not a programmer.  But if you live and breathe code and you spend most of your time in an IDE, maybe this application is for you.
+
+This app lets you create slide presentations using Markdown, HTML, and CSS.  It's built with [**Reveal.js**](https://revealjs.com/) &ndash; **the HTML Presentation Framework.**
 
 Reveal.js provides a way to define slides using HTML.  It optionally lets you use plain text in [Markdown format](https://www.markdownguide.org/) to define slides.  I've built this app on top of Reveal.js version 6, and set it up to use Markdown exclusively for the slide content.  I've also added some additional features to make it easy to add style and animation.
 
@@ -11,14 +13,14 @@ Reveal.js provides a way to define slides using HTML.  It optionally lets you us
 * Define your **entire presentation** with a single plain text file in Markdown format.
 * **Quote characters are automatically &ldquo;curled&rdquo;** for you, so you can type plain old straight quotes in your content, but have it look more natural when presented.
 * Since Markdown allows you to include HTML tags, you can **mix plain text and any HTML,** including styled text, images, graphics, videos &mdash; whatever you wish.
-* All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  And any slide can be given a unique background image.
+* All slides have **background graphics.**  The welcome slide, title slide, and section slides can each have their own background different from the other slides.  And any slide can be given its own unique background image.
 * A **speaker's view** (provided by a Reveal.js plugin) lets you include speaker's notes and preview the next slide in a separate window.  The speaker's view also includes a timer.
 * **A pointer is available** to let you draw attention to parts of your slide using your mouse.  The pointer simultaneously appears on both the audience view and speaker's view.
 * A **scrollable text box** can be added to any slide, making it easy to present a long section of text without having to spread it over multiple slides.  The box scrolls simultaneously in both the audience view and speaker's view.
 * While the slideshow is visible to the audience, **the computer's sleep functionality is suspended** (so you don't have the presentation suddenly disappear after a brief pause).
 * Use one of **over a dozen different themes** to style your slides, or create one of your own.
 
-The slides can be presented on any monitor, but they work best on an FHD resolution (1920x1080) monitor or TV.  The default font allows for 8-10 lines of text per slide, so the presentation is readable even from the back of a large room.
+The slides can be presented on any monitor, but they work best on an FHD resolution (1920x1080) monitor or TV.  The default font allows for 8-10 lines of text per slide, so the presentation on a large TV is readable even from the back of a large room.
 
 
 
@@ -28,7 +30,11 @@ The slides can be presented on any monitor, but they work best on an FHD resolut
 
 Slides are described in the plain text file "content.md", in Markdown format.  Markdown is a popular set of conventions for describing formatted text.
 
-Modify the text of the file "content.md" to define your slide content.  Each slide is simply text separated by three hyphens, with an empty line above and below them.  So you can have as many slides as you want, all defined in this one file.  For example:
+Modify the text of the file "content.md" to define your slide content.  Each slide is simply text separated by three hyphens, with an empty line above and below them.
+
+(***Tip:***  You may want to keep a copy of the original "content.md" for reference as it contains several examples of how to use the Markdown symbols and special notation that are described below.)
+
+You can have as many slides as you want, all defined in this one file.  For example:
 
 ```plaintext
 
@@ -43,6 +49,7 @@ Second slide contents goes here
 Third slide contents goes here
 
 ```
+It's that easy.
 
 If you want to include speaker notes for a slide, separate the slide content from the notes with three equals signs, with an empty line above and below them like this:
 
@@ -63,9 +70,10 @@ Speaker notes for the second slide go here
 Third slide contents goes here
 
 ```
+The speaker notes show up only in the speaker's view.  (How to turn that on is covered later.)
 
-***Tip:***  You may want to keep a copy of the original "content.md" for reference as it contains several examples of how to use the Markdown symbols and special notation that are described below.
-
+\
+The rest of this document describes how to add style, color, and animation to your slides.
 
 
 ## Symbols you can use
@@ -99,9 +107,7 @@ Most Markdown conventions should work, including extended conventions for tables
 
 The following tags govern the look and behavior of the entire slide:
 
-`<lesson-welcome>` &mdash; Enclose the content of your very first slide with a
-welcome message.  The content is centered and the slide has its own background
-image.
+`<lesson-welcome>` &mdash; Enclose the content of your very first slide with this tag to make a welcome message.  The content is centered and the slide has its own background image.  (Background images are explained later.)
 
 Example:
 
@@ -114,7 +120,7 @@ Example:
 </lesson-welcome>
 ```
 
-`<lesson-title>` &mdash; Enclose the content of of your second slide that defines the start of your presentation.  The content is centered and the slide has its own background image.
+`<lesson-title>` &mdash; Enclose the content of of your second slide with this tag to define the purpose of your presentation.  The content is centered and the slide has its own background image.
 
 Example:
 
@@ -128,7 +134,7 @@ Tonight's Lesson:
 </lesson-title>
 ```
 
-`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section.  The content is centered, and the slide transition sweeps from left to right.  (All other slides use a fade transition.)
+`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section with this tag.  The content is centered, and the slide transition sweeps from left to right.  (All other slides use a fade transition.)
 
 Example:
 
@@ -195,7 +201,7 @@ Example:
 </lesson-right>
 ```
 
-`<lesson-float>` &mdash; This tag creates a generally centered box floating over the other contents of a slide.  Combined with animation (explained in the next section), this can add some emphasis to the slide contents.
+`<lesson-float>` &mdash; This tag creates a centered box floating over the other contents of a slide.  Combined with animation (explained in the next section), this can add some emphasis to the slide contents.
 
 Example:
 
@@ -241,7 +247,7 @@ common types:
 </lesson-bottom>
 ```
 
-`<wide>` &mdash; This tag makes its contents big enough to stretch horizontally across the entire slide.  The less text there is, the larger the font.
+`<wide>` &mdash; This tag makes its contents big enough to stretch horizontally across the entire slide.  The less text, the larger the font.
 
 Example:
 
@@ -287,17 +293,17 @@ brackets removed.*
 
 ### Animation
 
-The Reveal.js display engine provides a number of ways to animate objects in slides.  The most common one is called "fragment", though in my opinion, it's better referred to as "fade in".  It's a CSS class that can be added to an HTML element to make it a *fragment* that gets added to the slide with an advancement (that is, pressing the right arrow key).
+The Reveal.js display engine provides a number of ways to animate objects in slides.  The most common one is called "fragment" (though in my opinion, it's better referred to as "fade in").  It's a CSS class that can be added to an HTML element to make it a *fragment* that gets added to the slide with an **advancement** (that is, pressing the right arrow key).
 
 See the `<lesson-float>` example above for how this class can be added to an element.
 
 #### _Line-based animation symbols_
 
-The problem is, this is difficult to use in plain Markdown text.  So I created the following shortcuts you can easily add to either a line or (with some exceptions) an inline element, such as `<span>`.  These shortcuts cover most of the animation features available in the Reveal.js engine.
+The problem is, this is difficult to use in plain Markdown text.  So I created the following shortcuts you can easily add to either a line of text or (with some exceptions) an inline element, such as `<span>`.  These shortcuts cover most of the animation features available in the Reveal.js engine.
 
 | Symbol | What it does upon advancement |
 | --- | --- |
-| {f} | The text fades into view |
+| {f} | The text fades into view (the one you'll use most often) |
 | {fo} | The text fades out of view |
 | {fio} | The text fades in, then fade outs with the next advancement |
 | {sfo} | The text "semi-fades out" (turns to gray) |
@@ -323,7 +329,7 @@ Here's an example of a list of bullet points that appear, one at a time, with ea
   playful, such as arching their backs and hopping sideways
 ```
 
-Note that the symbol can appear anywhere in the line to affect it, though it's good to stick to the convention of putting it at the beginning of the line.
+Note that the symbol can appear anywhere in the line to affect it, though it's good to keep to the convention of putting it at the beginning of the line.
 
 Some of the animations available in the Reveal.js engine need to operate on a whole line of text and can't be used in an inline element, because they need vertical space to perform their animation.
 
