@@ -462,10 +462,12 @@ Example:
 </lesson-animate>
 ```
 
-
+This simple example doesn't do the auto-animation feature justice.  Look at [Reveal.js's documentation on auto-animation](https://revealjs.com/auto-animate/) for more details.
 
 
 ### Background images
+
+
 
 TODO: describe the `<lesson-image>` tag
 
