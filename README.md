@@ -136,7 +136,7 @@ Example:
 <lesson-section>
 
 # Why Gloves are Important
-### *Ferrets can Bite!*
+### *Ferrets can bite!*
 
 </lesson-section>
 ```
@@ -297,18 +297,18 @@ The problem is, this is difficult to use in plain Markdown text.  So I created t
 
 | Symbol | What it does upon advancement |
 | --- | --- |
-| {f} Text | The text fades into view |
+| {f} | The text fades into view |
 | {fo} | The text fades out of view |
 | {fio} | The text fades in, then fade outs with the next advancement |
 | {sfo} | The text "semi-fades out" (turns to gray) |
 | {fis} | The text fades in then semi-fades out with the next advancement |
 | {t} | The text is struck through |
-| {hr} | highlight text by turning it red |
-| {hg} | highlight text by turning it green |
-| {hb} | highlight text by turning it blue |
-| {hcr} | Make the text red then turn normal with the next advancement |
-| {hcg} | Make the text green then turn normal with the next advancement |
-| {hcb} | Make the text blue then turn normal with the next advancement |
+| {hr} | Highlights the text by turning it red |
+| {hg} | Highlights the text by turning it green |
+| {hb} | Highlights the text by turning it blue |
+| {hcr} | Makes the text red then turn normal with the next advancement |
+| {hcg} | Makes the text green then turn normal with the next advancement |
+| {hcb} | Makes the text blue then turn normal with the next advancement |
 
 Here's an example of a list of bullet points that appear, one at a time, with each advancement:
 
