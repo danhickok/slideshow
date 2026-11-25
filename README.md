@@ -345,11 +345,122 @@ Some of the animations available in the Reveal.js engine need to operate on a wh
 
 #### _Slide-based animation_
 
+The line animation symbols are great for that little bit of movement that helps keep your audience's attention.  But sometimes you want something a little more eye-catching.  Reveal.js provides an automatic "tweening" feature that transforms/moves features appearing in adjacent slides.  
+
+The `<lesson-animate>` tag makes this possible.  Here's how to set it up:
+
+1. Define two adjacent slides; enclose each of the slides' contents with this tag.
+2. HTML elements that will transform from the first slide to the second need to have the same "data-id" attribute in each slide, so Reveal.js can match them up to make the transformation.
+3. Define different colors or positions of these matching elements as desired for your animation.
+4. For staggered delays in your animation, use "data-auto-animate-id" instead of "data-id", and include a "data-auto-animate-delay" attribute specifying a fractional number of seconds to wait between elements.
+
+Example:
+
+```plaintext
+<lesson-animate>
+
+<div
+  data-id="backplate"
+  style="background-color: gray;
+    width: 140px;
+    margin: auto;
+    padding: 20px;">
+  <div
+    data-id="stop"
+    style="background-color: red;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+  <div
+    data-id="caution"
+    style="background-color: silver;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+  <div
+    data-id="go"
+    style="background-color: silver;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+</div>
+
+<div data-auto-animate-id="msg1"
+  style="text-align: center;
+    margin-top: 80px;">
+  Stop
+</div>
+<div data-auto-animate-id="msg2"
+  style="text-align: center;
+    margin-top: 20px;">
+  &nbsp;
+</div>
+<div data-auto-animate-id="msg3"
+  style="text-align: center;
+    margin-top: 20px;">
+  &nbsp;
+</div>
+
+</lesson-animate>
+
+---
+
+<lesson-animate>
+
+<div
+  data-id="backplate"
+  style="background-color: gray;
+    width: 140px;
+    margin: auto;
+    padding: 20px;">
+  <div
+    data-id="stop"
+    style="background-color: silver;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+  <div
+    data-id="caution"
+    style="background-color: silver;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+  <div
+    data-id="go"
+    style="background-color: limegreen;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin: 20px;">
+  </div>
+</div>
 
 
-TODO: explain how to use the `<lesson-animate>` tag
+<div data-auto-animate-id="msg1"
+  data-auto-animate-delay="0.8"
+  style="text-align: center;
+    margin-top: 80px;">
+  Go!
+</div>
+<div data-auto-animate-id="msg2"
+  data-auto-animate-delay="1.3"
+  style="text-align: center;
+    margin-top: 20px;">
+  Go!
+</div>
+<div data-auto-animate-id="msg3"
+  data-auto-animate-delay="1.8"
+  style="text-align: center;
+    margin-top: 20px;">
+  Go!
+</div>
 
-
+</lesson-animate>
+```
 
 
 
