@@ -134,7 +134,7 @@ Tonight's Lesson:
 </lesson-title>
 ```
 
-`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section with this tag.  The content is centered, and the slide transition sweeps from left to right.  (All other slides use a fade transition.)
+`<lesson-section>` &mdash; Enclose the content of every slide that marks the beginning of a section with this tag.  The content is centered, and the slide transition sweeps to the left.  (All other slides use a fade transition.)
 
 Example:
 
@@ -349,58 +349,82 @@ The line animation symbols are great for that little bit of movement that helps 
 
 The `<lesson-animate>` tag makes this possible.  Here's how to set it up:
 
-1. Define two adjacent slides; enclose each of the slides' contents with this tag.
-1. Put elements in each slide.  Any HTML elements that will transform from the first slide to the second need to have the same "data-id" attribute in each slide, so Reveal.js can match them up to make the transformation.
+1. Define two or more adjacent slides; enclose each of the slides' contents with this tag.
+1. Put elements in each slide.
 1. Define different colors or positions of these matching elements as desired for your animation.
+1. The Reveal.js engine does its best to match elements from each slide.  But you may need to add the same "data-id" attribute to matching elements in each slide to help Reveal.js more accurately match them up to make the transformation.
 1. For staggered delays in your animation, include a "data-auto-animate-delay" attribute specifying a fractional number of seconds to wait.
 
-Example:
+Simple example:
+
+```plaintext
+<lesson-animate>
+
+On your marks...
+
+</lesson-animate>
+
+---
+
+<lesson-animate>
+
+On your marks...
+
+Get set...
+
+</lesson-animate>
+
+---
+
+<lesson-animate>
+
+On your marks...
+
+Get set...
+
+# Go!
+
+</lesson-animate>
+```
+
+Slightly more complex example:
 
 ```plaintext
 <lesson-animate>
 
 <div
-  data-id="backplate"
   style="background-color: gray;
-    width: 140px;
-    margin: auto;
-    padding: 20px;">
+    width: 140px; margin: auto; padding: 20px;">
   <div
     data-id="stop"
     style="background-color: red;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
   <div
     data-id="caution"
     style="background-color: silver;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
   <div
     data-id="go"
     style="background-color: silver;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
 </div>
 
-<div data-auto-animate-id="msg1"
-  style="text-align: center;
-    margin-top: 80px;">
+<div
+  style="text-align: center; margin-top: 80px;">
   Stop
 </div>
-<div data-auto-animate-id="msg2"
-  style="text-align: center;
-    margin-top: 20px;">
+<div
+  style="text-align: center; margin-top: 20px;">
   &nbsp;
 </div>
-<div data-auto-animate-id="msg3"
-  style="text-align: center;
-    margin-top: 20px;">
+<div
+  style="text-align: center; margin-top: 20px;">
   &nbsp;
 </div>
 
@@ -411,57 +435,48 @@ Example:
 <lesson-animate>
 
 <div
-  data-id="backplate"
   style="background-color: gray;
-    width: 140px;
-    margin: auto;
-    padding: 20px;">
+    width: 140px; margin: auto; padding: 20px;">
   <div
     data-id="stop"
     style="background-color: silver;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
   <div
     data-id="caution"
     style="background-color: silver;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
   <div
     data-id="go"
     style="background-color: limegreen;
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 100px; height: 100px; border-radius: 50%;
       margin: 20px;">
   </div>
 </div>
 
-<div data-id="msg1"
+<div
   data-auto-animate-delay="0.8"
-  style="text-align: center;
-    margin-top: 80px;">
+  style="text-align: center; margin-top: 80px;">
   Go!
 </div>
-<div data-id="msg2"
+<div
   data-auto-animate-delay="1.1"
-  style="text-align: center;
-    margin-top: 20px;">
+  style="text-align: center; margin-top: 20px;">
   Go!
 </div>
-<div data-id="msg3"
+<div
   data-auto-animate-delay="1.4"
-  style="text-align: center;
-    margin-top: 20px;">
+  style="text-align: center; margin-top: 20px;">
   Go!
 </div>
 
 </lesson-animate>
 ```
 
-This simple example really doesn't do the auto-animation feature justice.  Look at [Reveal.js's documentation on auto-animation](https://revealjs.com/auto-animate/) for more details.
+These examples really doesn't do the auto-animation feature justice.  Look at [Reveal.js's documentation on auto-animation](https://revealjs.com/auto-animate/) for more details.
 
 
 ### Themes

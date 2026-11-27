@@ -44,7 +44,7 @@ const Simplifier = {
         slides[i].setAttribute("data-auto-animate", true);
         slides[i].setAttribute(
           "data-auto-animate-easing",
-          "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+          "cubic-bezier(0.1, 0.8, 0.1, 1)",
         );
       }
 
